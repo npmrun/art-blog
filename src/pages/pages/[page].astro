@@ -1,0 +1,28 @@
+---
+import SitePage from "@blog/layouts/SitePage.astro";
+import { published } from "@blog/utils";
+import { pageSize } from "@blog/config";
+import Preview from "@blog/components/blog/Preview.astro";
+import Pagination from "@blog/components/Pagination.astro";
+
+export async function getStaticPaths({ paginate }) {
+	const allPosts = await published();
+	return paginate(allPosts, { pageSize: pageSize });
+}
+const { page } = Astro.props;
+---
+
+<SitePage>
+	<main>
+		{
+			page.data.map((p, i) => (
+				<Preview post={p} direction={i % 2 === 0 ? "left" : ""} />
+			))
+		}
+		<Pagination
+			currentPage={page.currentPage}
+			totalPage={page.lastPage}
+			url="pages"
+		/>
+	</main>
+</SitePage>

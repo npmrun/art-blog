@@ -1,0 +1,8 @@
+{
+    "less.lint.unknownAtRules": "ignore",
+    "less.validate": false,
+    "scss.lint.unknownAtRules": "ignore",
+    "scss.validate": false,
+    "markdown-image.local.path": "/public/article",
+    "markdown-image.local.referencePath": "/article"
+}

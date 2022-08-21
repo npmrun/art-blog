@@ -1,0 +1,91 @@
+---
+import Navbar from "@blog/components/Navbar.astro";
+import Footer from "@blog/components/Footer.astro";
+import SitePage from "@blog/layouts/SitePage.astro";
+import Date from "@blog/components/utilities/Date.astro";
+import { settings } from "@blog/config";
+import type { Post } from "#/type";
+
+export interface Props {
+	content: Post;
+}
+
+const { content } = Astro.props as Props;
+
+const showToc = (content.toc ?? true) && settings.showTOC;
+
+let image = content.img;
+if (!image && content._images.length && settings.postPicture === "first") {
+	image = content._images[0].url;
+}
+---
+
+<SitePage title={content.title} desc={content.desc}>
+	<main>
+		<article>
+			<div class="py-6 prose lg:prose-lg mx-auto">
+				{
+					image && content.imgWidth && content.imgHeight ? (
+						<figure class="flex justify-center">
+							<img
+								src={image}
+								alt={content.title}
+								width={content.imgWidth}
+								height={content.imgHeight}
+								class="rounded bg-base-200"
+							/>
+						</figure>
+					) : (
+						image && (
+							<figure class="flex justify-center">
+								<img
+									src={image}
+									alt={content.title}
+									class="rounded bg-base-200"
+								/>
+							</figure>
+						)
+					)
+				}
+				<h1>{content.title}</h1>
+				<div class="flex gap-3">
+					<span class="badge badge-ghost">
+						<Date date={content.pubDate} />
+					</span>
+					{
+						content.author && (
+							<span class="text-sm text-base-content/70">
+								By {content.author}
+							</span>
+						)
+					}
+				</div>
+				<div class="relative">
+					<slot />
+					{
+						showToc &&
+						!!content._head &&
+						!!content._head.length && (
+							<div class="absolute left-full ml-[50px] top-[50px] h-full lg:block hidden whitespace-nowrap">
+								<div class="sticky top-[25px]">
+									{content._head.map((v) => (
+										<a
+											class="block"
+											style={{
+												marginLeft:
+													(v.level - 2) * 20 + "px",
+											}}
+											href={"#" + v.title}
+										>
+											{v.title}
+										</a>
+									))}
+								</div>
+							</div>
+						)
+					}
+				</div>
+			</div>
+		</article>
+	</main>
+</SitePage>

@@ -1,0 +1,15 @@
+---
+import { Pagination } from "@sarissa/pagination";
+const { currentPage, totalPage, url } = Astro.props;
+---
+
+<Pagination
+    activeButton="btn-active"
+    button="btn"
+    buttonGroup="btn-group"
+    disabledButton="btn-disabled"
+    outerDiv="flex justify-center"
+    currentPage={currentPage}
+    totalPage={totalPage}
+    url={url}
+/>

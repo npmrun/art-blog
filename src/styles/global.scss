@@ -1,0 +1,42 @@
+.astro-code {
+  border-radius: var(--rounded-box);
+  padding: 1rem;
+}
+
+@mixin ellipsis($lines: 1) {
+  @if ($lines==1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+}
+.over1line {
+  @include ellipsis(1);
+}
+.over3line {
+  @include ellipsis(3);
+}
+@screen md {
+  .over3line {
+    @include ellipsis(5);
+  }
+}
+
+.clip_left {
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+}
+
+.clip_right {
+  clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+// ::-webkit-scrollbar {
+//   display: none;
+// }

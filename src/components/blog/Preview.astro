@@ -1,0 +1,73 @@
+---
+import type { Post } from "@blog/utils";
+import { getPostsUrl } from "@blog/utils";
+
+const post: Post = Astro.props.post;
+const direction: string = Astro.props.direction;
+
+const defaultImage =
+	"https://imgapi.cn/api.php?fl=dongman&gs=images&date" +
+	new Date().getTime();
+---
+
+<div
+	class="my-8 flex flex-row-reverse gap-6 md:gap-10 items-start relative overflow-hidden rounded-lg bg-black/25 bg-opacity-2 h-40 md:h-[12.5rem]"
+>
+	<img
+		class="absolute top-1/2 bottom-0 left-1/2 right-0 blur-[1.875rem] brightness-75 scale-110 -translate-x-1/2 -translate-y-1/2 w-full"
+		src={post.img || defaultImage}
+		alt=""
+	/>
+	{
+		direction === "left" && (
+			<div
+				class="flex flex-col gap-4 flex-1 w-0 z-1 p-6 "
+				style="z-index: 1;"
+			>
+				<h2 class="text-2xl font-bold text-white">
+					<a
+						class="hover:underline hover:decoration-wavy"
+						href={getPostsUrl(post.slug)}
+					>
+						{post.title}
+					</a>
+				</h2>
+				<p class="text-sm text-base-content/70 text-white over3line">
+					{post.desc}
+				</p>
+			</div>
+		)
+	}
+	<a
+		href={getPostsUrl(post.slug)}
+		class={"block shrink-0 w-4/12 h-full " +
+		(direction === "left" ? "clip_left" : "clip_right")}
+		style="z-index: 1;height: 100%;"
+	>
+		<img
+			src={post.img || defaultImage}
+			alt={post.title}
+			class="w-full h-full bg-base-200 object-cover"
+		/>
+	</a>
+	{
+		direction !== "left" && (
+			<div
+				class="flex flex-col gap-4 flex-1 w-0 z-1 p-6 "
+				style="z-index: 1;"
+			>
+				<h2 class="text-2xl font-bold text-white">
+					<a
+						class="hover:underline hover:decoration-wavy"
+						href={getPostsUrl(post.slug)}
+					>
+						{post.title}1112
+					</a>
+				</h2>
+				<p class="text-sm text-base-content/70 text-white over3line">
+					{post.desc}
+				</p>
+			</div>
+		)
+	}
+</div>
