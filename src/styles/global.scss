@@ -25,7 +25,7 @@
 }
 @screen md {
   .over3line {
-    @include ellipsis(4);
+    @include ellipsis(3); 
   }
 }
 

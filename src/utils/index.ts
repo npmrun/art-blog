@@ -32,13 +32,11 @@ export function single(post: MarkdownInstance<any>): Post {
   return {
     ...post.frontmatter,
     Content: post.Content,
-    _rawString: post.frontmatter._rawString,
-    _images: post.frontmatter._images,
     slug: slug,
     url: post.url, // 如果在src/pages目录外，此时url为undefined,那么就使用上面的slug手动拼接路由
     draft: post.file.split('/').reverse()[1] === 'drafts',
     pubTimestamp: new Date(post.frontmatter.pubDate).valueOf(),
-    updatedTimestamp: new Date(post.frontmatter.updatedDate).valueOf(),
+    updatedTimestamp: !!post.frontmatter.updatedDate && new Date(post.frontmatter.updatedDate).valueOf(),
   };
 }
 

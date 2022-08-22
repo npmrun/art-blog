@@ -8,7 +8,7 @@ export type Post = {
   pubDate: string;
   updatedDate: string;
   pubTimestamp: number;
-  updatedTimestamp: number;
+  updatedTimestamp?: number;
   draft: boolean;
   file: URL;
   categories: string[];

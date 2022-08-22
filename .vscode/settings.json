@@ -5,5 +5,9 @@
     "scss.validate": false,
     "markdown-image.local.path": "/public/article",
     "markdown-image.local.referencePath": "/article",
-    "markdown-image.base.fileNameFormat": "${mdname}_${YY}-${MM}-${DD}_${DD}-${HH}-${mm}-${ss}"
+    "markdown-image.base.fileNameFormat": "${mdname}_${YY}-${MM}-${DD}_${DD}-${HH}-${mm}-${ss}",
+    "templateGenerator.fields.author": "Dash",
+    "templateGenerator.fields.email": "1549469775",
+    "templateGenerator.fields.link": "https://art.xieyaxin.top",
+    "templateGenerator.templatesPath": "D:\\1XYX\\@blog\\art-blog\\template"
 }
