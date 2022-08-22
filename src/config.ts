@@ -35,8 +35,8 @@ export const settings = {
       order: 1,
     },
     {
-      name: "指南",
-      desc: "Themeasda",
+      name: "Astro",
+      desc: "一个用于构建快速，以内容为中心的网站的Web框架。",
       image:
         "https://tva4.sinaimg.cn/large/9bd9b167gy1fwsihj5dtjj21hc0u0u0y.jpg",
       order: 2,

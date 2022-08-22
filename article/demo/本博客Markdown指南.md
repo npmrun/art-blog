@@ -1,14 +1,11 @@
 ---
 title: "本博客Markdown指南"
-desc: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
+desc: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 pubDate: "2022/01/01"
 author: "王子"
 categories: 
   - Demo
 ---
-
-![This is a placeholder image desc](/placeholder-hero.jpg)
-
 ```
 ---
 title: 文章标题
@@ -22,6 +19,7 @@ imgHeight: 头图高
 categories: 
   - 分类1
   - 分类2
+---
 ```
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

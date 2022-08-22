@@ -21,11 +21,11 @@
   @include ellipsis(1);
 }
 .over3line {
-  @include ellipsis(3);
+  @include ellipsis(2);
 }
 @screen md {
   .over3line {
-    @include ellipsis(5);
+    @include ellipsis(4);
   }
 }
 

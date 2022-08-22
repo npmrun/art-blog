@@ -4,5 +4,6 @@
     "scss.lint.unknownAtRules": "ignore",
     "scss.validate": false,
     "markdown-image.local.path": "/public/article",
-    "markdown-image.local.referencePath": "/article"
+    "markdown-image.local.referencePath": "/article",
+    "markdown-image.base.fileNameFormat": "${mdname}_${YY}-${MM}-${DD}_${DD}-${HH}-${mm}-${ss}"
 }
