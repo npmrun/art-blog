@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "hancel.markdown-image",
-        "DengSir.template-generator-vscode"
+        "DengSir.template-generator-vscode",
+        "antfu.browse-lite"
     ]
 }
