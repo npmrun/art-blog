@@ -13,7 +13,7 @@ export async function getStaticPaths({ paginate }) {
     let allCategoriesUnique = [...new Set(allCategories.flat())];
     return allCategoriesUnique.map((category) => {
         const filteredPosts = allPosts.filter(
-            (post) => post.categories.includes(category) && post.draft != true
+            (post) => post.categories && post.categories.includes(category) && post.draft != true
         );
         return paginate(filteredPosts, {
             params: { category },
