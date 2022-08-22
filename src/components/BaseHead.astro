@@ -9,13 +9,13 @@ export interface Props {
 	image?: string;
 }
 
-const { title, desc, image = "/placeholder-social.jpg" } = Astro.props;
+const { title, desc, image = "/placeholder-social.jpg", icon = "/astro.svg" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/astro.svg" />
+<link rel="icon" type="image/svg+xml" href={icon} />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
