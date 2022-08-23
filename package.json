@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "postinstall": "cp ./hack/index.js ./node_modules/astro-imagetools/integration/index.js",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
