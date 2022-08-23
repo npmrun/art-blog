@@ -27,6 +27,7 @@
     "@astrojs/tailwind": "^1.0.0",
     "@astrojs/vue": "^1.0.0",
     "@sarissa/pagination": "^1.0.3",
+    "astro-imagetools": "^0.6.10",
     "vue": "^3.2.37"
   }
 }

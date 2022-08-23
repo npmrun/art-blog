@@ -1,23 +1,42 @@
 ---
 import type { Post } from "#/type";
 import { getPostsUrl } from "@blog/utils";
+import { Picture } from "astro-imagetools/components";
 
 const post: Post = Astro.props.post;
 const direction: string = Astro.props.direction;
 
 const defaultImage =
-    "https://imgapi.cn/api.php?fl=dongman&gs=images&date" +
-    new Date().getTime();
+    (
+        await fetch(
+            "https://imgapi.cn/api.php?fl=dongman&gs=images&date" +
+                new Date().getTime()
+        )
+    ).url ??
+    "https://tva3.sinaimg.cn/large/9bd9b167gy1g2qk4edm8zj21hc0u0nad.jpg";
 ---
 
 <div
     class="my-8 flex flex-row-reverse gap-6 md:gap-10 items-start relative overflow-hidden rounded-lg bg-black/25 bg-opacity-2 h-30 md:h-[13rem]"
 >
-    <img
+    <Picture
+        src={post.img || defaultImage}
+        loading="lazy"
+        alt={post.title}
+        attributes={{
+            picture: {
+                class: "!absolute !h-full brightness-75 scale-110 w-full blur-none md:blur-[1.875rem]",
+            },
+            img: {
+                class: "!absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+            },
+        }}
+    />
+    <!-- <img
         class="absolute top-1/2 bottom-0 left-1/2 right-0 blur-none md:blur-[1.875rem] brightness-75 scale-110 -translate-x-1/2 -translate-y-1/2 w-full"
         src={post.img || defaultImage}
         alt=""
-    />
+    /> -->
     {
         direction === "left" && (
             <div
@@ -62,11 +81,19 @@ const defaultImage =
         (direction === "left" ? "clip_left" : "clip_right")}
         style="z-index: 1;height: 100%;"
     >
-        <img
+        <Picture
+            src={post.img || defaultImage}
+            alt={post.title}
+            attributes={{
+                picture: { class: "w-full !h-full bg-base-200" },
+                img: { class: "w-full !h-full" },
+            }}
+        />
+        <!-- <img
             src={post.img || defaultImage}
             alt={post.title}
             class="w-full h-full bg-base-200 object-cover"
-        />
+        /> -->
     </a>
     {
         direction !== "left" && (
