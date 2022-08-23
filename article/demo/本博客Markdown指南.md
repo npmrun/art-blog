@@ -1,6 +1,7 @@
 ---
 title: "本博客Markdown指南"
 desc: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
+img: "https://tva4.sinaimg.cn/large/9bd9b167ly1fwshggoesbj21hc0u0npd.jpg"
 pubDate: "2022/01/01"
 author: "王子"
 categories: 

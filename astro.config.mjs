@@ -46,10 +46,6 @@ export default defineConfig({
         }),
     ],
     vite: {
-        // build: {
-        //     commonjsOptions: {
-        //         include: [/linked-dep/, /node_modules/],
-        //     },
-        // },
+        plugins: []
     },
 });

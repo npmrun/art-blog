@@ -6,14 +6,19 @@ import { Picture } from "astro-imagetools/components";
 const post: Post = Astro.props.post;
 const direction: string = Astro.props.direction;
 
-const defaultImage =
-    (
-        await fetch(
-            "https://imgapi.cn/api.php?fl=dongman&gs=images&date" +
-                new Date().getTime()
-        )
-    ).url ??
-    "https://tva3.sinaimg.cn/large/9bd9b167gy1g2qk4edm8zj21hc0u0nad.jpg";
+let defaultImage = "https://tva3.sinaimg.cn/large/9bd9b167gy1g2qk4edm8zj21hc0u0nad.jpg";
+if (!post.img) {
+    try {
+        defaultImage = (
+            await fetch(
+                "https://imgapi.cn/api.php?fl=dongman&gs=images&date" +
+                    new Date().getTime()
+            )
+        ).url;
+    } catch (error) {
+        console.error(error);
+    }
+}
 ---
 
 <div
@@ -23,6 +28,7 @@ const defaultImage =
         src={post.img || defaultImage}
         loading="lazy"
         alt={post.title}
+        fadeInTransition={false}
         attributes={{
             picture: {
                 class: "!absolute !h-full brightness-75 scale-110 w-full blur-none md:blur-[1.875rem]",
