@@ -3,6 +3,8 @@ title: markdown-it使用手册
 desc: 文章描述
 pubDate: 2022/8/22 21:04:52
 author: Dash
+categories: 
+    - 技术笔记
 ---
 
 ## 简介
@@ -20,7 +22,7 @@ const md = new MarkdownIt({
 });
 console.log(md.render("# Heading1"))
 ```
-其`MarkdownIt`的配置说明如下：
+其`MarkdownIt`的简要配置说明如下：
 | 字段  | 说明  |
 | :---: | :---: |
 | html  |  是否将md中的html源码渲染出来,true: html维持不变, false: 转义html   |
