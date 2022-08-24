@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "hack": "cp ./hack/index.js ./node_modules/astro-imagetools/integration/index.js",
+    "hack:a": "cp ./hack/index.js ./node_modules/astro-imagetools/integration/index.js",
+    "hack:b": "cp ./hack/runtimeChecks.js ./node_modules/astro-imagetools/utils/runtimeChecks.js",
+    "postinstall": "npm run hack:a && npm run hack:b",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run hack && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -16,6 +18,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@tailwindcss/typography": "^0.5.4",
     "astro": "^1.0.6",
+    "astro-robots-txt": "^0.3.8",
     "autoprefixer": "^10.4.8",
     "daisyui": "^2.24.0",
     "rehype-autolink-headings": "^6.1.1",
