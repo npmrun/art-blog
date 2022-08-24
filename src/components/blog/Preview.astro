@@ -34,7 +34,7 @@ if (!post.img) {
                 class: "!absolute !h-full brightness-75 scale-110 w-full blur-none md:blur-[1.875rem]",
             },
             img: {
-                class: "!absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+                class: "!absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover",
             },
         }}
     />
@@ -92,7 +92,7 @@ if (!post.img) {
             alt={post.title}
             attributes={{
                 picture: { class: "w-full !h-full bg-base-200" },
-                img: { class: "w-full !h-full" },
+                img: { class: "w-full !h-full object-cover" },
             }}
         />
         <!-- <img
