@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "@blog/styles/global.scss";
+import { SEO } from "astro-seo";
 
 export interface Props {
 	title: string;
@@ -21,8 +22,12 @@ const { title, desc, image = "/placeholder-social.jpg", icon = "/astro.svg" } = 
 
 <!-- Primary Meta Tags -->
 {title && <title>{title}</title>}
-<meta name="title" content={title} />
-{desc && <meta name="desc" content={desc} />}
+<!-- 用SEO组件代替 -->
+<!-- <meta name="title" content={title} />
+{desc && <meta name="desc" content={desc} />} -->
+<SEO
+    title={title}
+    description={desc} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
