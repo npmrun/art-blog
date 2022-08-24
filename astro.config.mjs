@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 import { astroImageTools } from "astro-imagetools";
 import robotsTxt from 'astro-robots-txt';
+import compress from "astro-compress";
 
 import sitemap from "@astrojs/sitemap";
 import { exampleRemarkPlugin } from "./plugins/example-remark-plugin.mjs";
@@ -33,6 +34,7 @@ export default defineConfig({
     },
     site: "https://art.xieyaxin.top/",
     integrations: [
+        compress(),
         robotsTxt(),
         astroImageTools,
         vue(),

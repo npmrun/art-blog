@@ -31,6 +31,7 @@
     "@astrojs/tailwind": "^1.0.0",
     "@astrojs/vue": "^1.0.0",
     "@sarissa/pagination": "^1.0.3",
+    "astro-compress": "^1.0.5",
     "astro-imagetools": "^0.6.10",
     "astro-seo": "^0.5.1",
     "vue": "^3.2.37"
