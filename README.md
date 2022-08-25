@@ -13,8 +13,8 @@ Simple blog template with Astro, Tailwind CSS, daisyUI
 - CSS 用 tailwindcss 或者 scss,如果直接用 style 的话无法 autoprefixer
 
 ```
-node: 16.5.0
-npm: 7.19.1
+node: 16.15.0
+npm: 8.5.5
 ```
 
 https://imgapi.cn/api.php?fl=dongman&gs=images
