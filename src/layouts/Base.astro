@@ -20,20 +20,23 @@ const { title, desc, icon } = Astro.props as Props;
       icon={icon || siteInfo.icon}
     />
     <slot name="head" />
-    <!-- 2222222 -->
-    <script src="/gitalk.min.js" is:inline></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script is:inline>
-        window.gitalk = new Gitalk({
-            clientID: 'cfb684e450a5b24c7c69', //Client ID
-            clientSecret: 'd82afb2ab59ec7ce194ef291a0c9e0a7fa5a5179', //Client Secret
-            repo: 'art-blog',//仓库名称
-            owner: 'npmrun',//仓库拥有者
-            admin: ['npmrun'],
-            id: location.href,      // Ensure uniqueness and length less than 50
-            distractionFreeMode: false  // Facebook-like distraction free mode
-        })
-    </script>
+    <!-- https://giscus.app/zh-CN -->
+    <script is:inline src="https://giscus.app/client.js"
+        data-repo="npmrun/art-blog"
+        data-repo-id="R_kgDOH218pQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOH218pc4CRCN1"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
 </head>
 <body class="dark:brightness-[.65]">
     <slot />
