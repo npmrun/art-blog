@@ -13,14 +13,22 @@ export const nav = [
   {
     title: "关于",
     slug: "/about",
+    children: []
   },
   {
     title: "联系",
     slug: "/contact",
+    children: []
   },
   {
     title: "分类",
     slug: "/categories",
+    children: []
+  },
+  {
+    title: "效果不错的站点",
+    slug: "/site" ,
+    children: []
   },
 ];
 

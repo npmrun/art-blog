@@ -3,7 +3,7 @@ import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 import { astroImageTools } from "astro-imagetools";
-import robotsTxt from 'astro-robots-txt';
+import robotsTxt from "astro-robots-txt";
 import compress from "astro-compress";
 
 import sitemap from "@astrojs/sitemap";
@@ -50,6 +50,6 @@ export default defineConfig({
         }),
     ],
     vite: {
-        plugins: []
+        plugins: [],
     },
 });

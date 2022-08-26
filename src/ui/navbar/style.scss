@@ -1,0 +1,35 @@
+.bg {
+    position: relative;
+    .line{
+        background: url(/mask.png) repeat;
+        height: 550px;
+        width: 100%;
+        position: absolute;
+    }
+    .waves {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        .wave {
+            animation: move 3s linear infinite;
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    animation-delay: #{$i * -2s};
+                    animation-duration: #{12s - $i * 3s};
+                }
+            }
+        }
+        @keyframes move {
+            from {
+                transform: translate(-90px, 0%);
+            }
+            to {
+                transform: translate(85px, 0%);
+            }
+        }
+    }
+}
+
+

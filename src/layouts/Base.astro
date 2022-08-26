@@ -20,9 +20,9 @@ const { title, desc, icon } = Astro.props as Props;
       icon={icon || siteInfo.icon}
     />
     <slot name="head" />
+    <script src="/theme-change.js" is:inline></script>
 </head>
 <body class="dark:brightness-[.65]">
     <slot />
-    <script src="/theme-change.js" is:inline></script>
 </body>
 </html>
