@@ -5,6 +5,7 @@ import vue from "@astrojs/vue";
 import { astroImageTools } from "astro-imagetools";
 import robotsTxt from "astro-robots-txt";
 import compress from "astro-compress";
+import path from "path";
 
 import sitemap from "@astrojs/sitemap";
 import { exampleRemarkPlugin } from "./plugins/example-remark-plugin.mjs";
@@ -50,6 +51,13 @@ export default defineConfig({
         }),
     ],
     vite: {
+        resolve:{
+            alias:{
+                "@root": path.resolve("./"),
+                "@blog": path.resolve("./src"),
+                "#": path.resolve("./typings"),
+            }
+        },
         plugins: [],
     },
 });

@@ -15,7 +15,7 @@ export function getPostsUrl(slug) {
  * 获取所有的文章
  */
 export async function getPosts() {
-  const obj = await import.meta.glob('../../article/**/*.{md,mdx}', {
+  const obj = await import.meta.glob('@root/article/**/*.{md,mdx}', {
     eager: true,
   });
   return Object.values(obj) as MarkdownInstance<any>[];
