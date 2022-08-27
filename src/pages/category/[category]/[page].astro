@@ -1,8 +1,8 @@
 ---
-import Preview from "@blog/components/blog/Preview.astro";
+import Preview from "@blog/ui/Preview/Preview.astro";
 import Pagination from "@blog/components/Pagination.astro";
 import { pageSize } from "@blog/config";
-import SitePage from "@blog/layouts/SitePage.astro";
+import SitePage from "@blog/Layouts/Base/SitePage.astro";
 import { published } from "@blog/utils";
 
 export async function getStaticPaths({ paginate }) {

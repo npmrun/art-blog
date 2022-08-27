@@ -1,7 +1,7 @@
 ---
 import { published } from "@blog/utils";
 import type { Post } from "#/type";
-import BlogPost from "@blog/layouts/BlogPost.astro";
+import BlogPost from "@blog/Layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
 	const posts = await published();

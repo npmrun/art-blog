@@ -16,11 +16,9 @@
     "@astrojs/mdx": "^0.10.0",
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
-    "@tailwindcss/typography": "^0.5.4",
     "astro": "^1.0.6",
     "astro-robots-txt": "^0.3.8",
     "autoprefixer": "^10.4.8",
-    "daisyui": "^2.24.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1",
     "sass": "^1.54.4",
@@ -28,12 +26,13 @@
     "theme-change": "^2.2.0"
   },
   "dependencies": {
+    "@astrojs/partytown": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
     "@astrojs/vue": "^1.0.0",
     "@sarissa/pagination": "^1.0.3",
     "astro-compress": "^1.0.5",
+    "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.6.10",
-    "astro-seo": "^0.5.1",
     "vue": "^3.2.37"
   }
 }

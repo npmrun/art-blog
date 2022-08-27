@@ -6,6 +6,7 @@ import { astroImageTools } from "astro-imagetools";
 import robotsTxt from "astro-robots-txt";
 import compress from "astro-compress";
 import path from "path";
+import partytown from '@astrojs/partytown';
 
 import sitemap from "@astrojs/sitemap";
 import { exampleRemarkPlugin } from "./plugins/example-remark-plugin.mjs";
@@ -35,6 +36,7 @@ export default defineConfig({
     },
     site: "https://art.xieyaxin.top/",
     integrations: [
+        partytown(),
         compress(),
         robotsTxt(),
         astroImageTools,
@@ -51,12 +53,15 @@ export default defineConfig({
         }),
     ],
     vite: {
-        resolve:{
-            alias:{
+        ssr: {
+            external: ["svgo"],
+        },
+        resolve: {
+            alias: {
                 "@root": path.resolve("./"),
                 "@blog": path.resolve("./src"),
                 "#": path.resolve("./typings"),
-            }
+            },
         },
         plugins: [],
     },

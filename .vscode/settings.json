@@ -10,7 +10,7 @@
     "templateGenerator.fields.email": "1549469775",
     "templateGenerator.fields.link": "https://art.xieyaxin.top",
     "templateGenerator.templatesPath": "${rootPath}/template",
-    "browse-lite.chromeExecutable": "/usr/bin/microsoft-edge-dev",
-    // "browse-lite.chromeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    // "browse-lite.chromeExecutable": "/usr/bin/microsoft-edge-dev",
+    "browse-lite.chromeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     "browse-lite.startUrl": "http://localhost:3000"
 }

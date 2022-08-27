@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPost.astro"
+layout: "@blog/Layouts/BlogPost.astro"
 title: "关于我"
 author: "Dash"
 updatedDate: "August 08 2022"

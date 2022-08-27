@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPost.astro"
+layout: "@blog/Layouts/BlogPost.astro"
 title: "Contact Me"
 desc: "Lorem ipsum dolor sit amet"
 updatedDate: "August 08 2022"

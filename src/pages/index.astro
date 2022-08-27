@@ -1,8 +1,8 @@
 ---
 import { published } from "@blog/utils";
-import Preview from "@blog/components/blog/Preview.astro";
+import Preview from "@blog/ui/Preview/Preview.astro";
 import Pagination from "@blog/components/Pagination.astro";
-import SitePage from "@blog/layouts/SitePage.astro";
+import SitePage from "@blog/Layouts/Base/SitePage.astro";
 import { pageSize } from "@blog/config";
 
 const allPosts = await published();

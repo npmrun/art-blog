@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@root/*": ["./*"],
       "@blog/*": ["src/*"],
       "#/*": ["typings/*"],
     }
