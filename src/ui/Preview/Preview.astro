@@ -1,18 +1,22 @@
 ---
 import type { Post } from "#/type";
 import { getPostsUrl } from "@blog/utils";
+import { settings } from "@root/src/config";
 import { Picture } from "astro-imagetools/components";
+import Content from "./Content.astro";
 
 const post: Post = Astro.props.post;
 const direction: string = Astro.props.direction;
 
-let defaultImage = "https://tva3.sinaimg.cn/large/9bd9b167gy1g2qk4edm8zj21hc0u0nad.jpg";
-if (!post.img) {
+let image = post.img;
+if (!image && post._images.length && settings.postPicture === "first") {
+    image = post._images[0].url;
+}
+if (!image) {
     try {
-        defaultImage = (
+        image = (
             await fetch(
-                "https://imgapi.cn/api.php?fl=dongman&gs=images&date" +
-                    new Date().getTime()
+                "https://imgapi.cn/api.php?fl=dongman&gs=images"
             )
         ).url;
     } catch (error) {
@@ -22,10 +26,12 @@ if (!post.img) {
 ---
 
 <div
-    class="my-8 flex flex-row-reverse gap-6 md:gap-10 items-start relative overflow-hidden rounded-lg bg-black/25 bg-opacity-2 h-30 md:h-[13rem]"
+    class={`my-8 flex ${
+        direction === "left" ? "flex-row" : "flex-row-reverse"
+    } gap-6 md:gap-10 group items-start relative overflow-hidden rounded-lg bg-black/25 bg-opacity-2 h-30 md:h-[13rem]`}
 >
     <Picture
-        src={post.img || defaultImage}
+        src={image}
         loading="eager"
         alt={post.title}
         fadeInTransition={false}
@@ -38,105 +44,21 @@ if (!post.img) {
             },
         }}
     />
-    <!-- <img
-        class="absolute top-1/2 bottom-0 left-1/2 right-0 blur-none md:blur-[1.875rem] brightness-75 scale-110 -translate-x-1/2 -translate-y-1/2 w-full"
-        src={post.img || defaultImage}
-        alt=""
-    /> -->
-    {
-        direction === "left" && (
-            <div
-                class="flex flex-col gap-4 flex-1 w-0 z-1 p-6 h-full"
-                style="z-index: 1;"
-            >
-                <div>
-                    <h2 class="text-2xl font-bold text-white">
-                        <a
-                            class="hover:underline hover:decoration-wavy over1line"
-                            href={getPostsUrl(post.slug)}
-                        >
-                            {post.title}
-                        </a>
-                    </h2>
-                    <span class="text-[12px] text-white font-normal">
-                        创建于：{post.pubDate}
-                    </span>
-                    <div class="text-xl font-normal">
-                        {post.categories &&
-                            !!post.categories.length &&
-                            post.categories.map((v) => (
-                                <a
-                                    class="badge badge-ghost ml-[8px] first:ml-0"
-                                    href={`../category/${v}/1`}
-                                >
-                                    {v}
-                                </a>
-                            ))}
-                    </div>
-                </div>
-
-                <p class="text-sm text-base-content/70 text-white over3line">
-                    {post.desc}
-                </p>
-            </div>
-        )
-    }
     <a
         href={getPostsUrl(post.slug)}
         class={"shrink-0 w-4/12 h-full md:block hidden " +
-        (direction === "left" ? "clip_left" : "clip_right")}
+            (direction === "left" ? "clip_left" : "clip_right")}
         style="z-index: 1;height: 100%;"
     >
         <Picture
-            src={post.img || defaultImage}
+            src={image}
             loading="eager"
             alt={post.title}
             attributes={{
-                picture: { class: "w-full !h-full bg-base-200" },
+                picture: { class: "w-full !h-full bg-base-200 transition-transform group-hover:rotate-6 group-hover:scale-110" },
                 img: { class: "w-full !h-full object-cover" },
             }}
         />
-        <!-- <img
-            src={post.img || defaultImage}
-            alt={post.title}
-            class="w-full h-full bg-base-200 object-cover"
-        /> -->
     </a>
-    {
-        direction !== "left" && (
-            <div
-                class="flex flex-col gap-4 flex-1 w-0 z-1 p-6 h-full"
-                style="z-index: 1;"
-            >
-                <div>
-                    <h2 class="text-2xl font-bold text-white">
-                        <a
-                            class="hover:underline hover:decoration-wavy"
-                            href={getPostsUrl(post.slug)}
-                        >
-                            {post.title}
-                        </a>
-                    </h2>
-                    <span class="text-[12px] text-white font-normal">
-                        {post.pubDate}
-                    </span>
-                    <div class="text-xl font-normal">
-                        {post.categories &&
-                            !!post.categories.length &&
-                            post.categories.map((v) => (
-                                <a
-                                    class="badge badge-ghost ml-[8px]"
-                                    href={`../category/${v}/1`}
-                                >
-                                    {v}
-                                </a>
-                            ))}
-                    </div>
-                </div>
-                <p class="text-sm text-base-content/70 text-white over3line">
-                    {post.desc}
-                </p>
-            </div>
-        )
-    }
+    <Content post={post} />
 </div>

@@ -4,8 +4,10 @@ desc: tsconfig的简要配置，用于快速写一个Demo
 pubDate: 2022/8/23 10:52:21
 author: Dash
 img: https://tva4.sinaimg.cn/large/9bd9b167gy1g4lho53ng3j21hc0xckf7.jpg
+imgPosition: top
 categories: 
     - 模板配置
+    - 代码
 ---
 
 ```json

@@ -8,11 +8,13 @@ interface Props {
 }
 
 const { title, desc } = Astro.props as Props;
+// https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif
 ---
 
 <SitePage title={title} desc={desc}>
     <Hero
-        bg="https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif"
+        bg="/bg.png"
+        position="top"
     />
     <div class="p-4 pb-10 max-w-3xl mx-auto">
         <slot />

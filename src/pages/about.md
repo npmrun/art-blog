@@ -14,5 +14,3 @@ img: "https://tva2.sinaimg.cn/large/9bd9b167gy1g4lhr9rjs5j21hc0xcx63.jpg"
 但我的信条是做自己喜欢做的事。  
 人生在世，仿佛一些都是命中注定的，站在现在回首过去，仿佛只是游戏人间而已，再看前路，立着巍峨大山，淌着
 汹涌的波涛。所谓人间即地狱，不无道理。
-
-http://dhz.wkbanjia.com/

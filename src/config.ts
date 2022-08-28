@@ -1,12 +1,13 @@
 // 首页分页个数
-export const pageSize = 10;
+export const pageSize = 3;
 // 站点信息配置
 export const siteInfo = {
-  siteName: "Dash Blog",
-  siteDesc: "This is a simple blog",
+  siteName: "Art Blog",
+  siteDesc: "A Beautity Blog To Record Life !",
   lang: "zh-cn",
   icon: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
   avatar: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
+  github: "https://github.com/npmrun/art-blog"
 };
 
 export const nav = [

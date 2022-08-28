@@ -5,6 +5,7 @@
   "scripts": {
     "hack:a": "cp ./hack/index.js ./node_modules/astro-imagetools/integration/index.js",
     "hack:b": "cp ./hack/runtimeChecks.js ./node_modules/astro-imagetools/utils/runtimeChecks.js",
+    "hack:c": "cp ./hack/Icon.astro ./node_modules/astro-icon/lib/Icon.astro",
     "postinstall": "npm run hack:a && npm run hack:b",
     "dev": "astro dev",
     "start": "astro dev",

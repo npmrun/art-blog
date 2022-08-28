@@ -1,11 +1,11 @@
 <template>
     <a :href="`../category/${category.name}/1`"
-        class="card w-80 h-30 bg-base-100 shadow-xl image-full cursor-pointer dark:bg-white">
+        class="w-80 h-30 bg-orange-400 rounded-lg p-[15px] text-white text- shadow-xl image-full cursor-pointer dark:bg-white">
         <figure><img :src="computedImage" /></figure>
-        <div class="card-body">
-            <h2 class="card-title flex">
-                <span class="flex-1 w-0 inline-block over1line">{{ category.name }}</span>
-                <button class="btn btn-primary btn-sm">{{ category.count }}</button>
+        <div class="">
+            <h2 class="flex">
+                <span class="flex-1 w-0 font-bold inline-block over1line">{{ category.name }}</span>
+                <button class="px-[6px] rounded  bg-fuchsia-400">{{ category.count }}</button>
             </h2>
             <p>{{ category.desc }}</p>
         </div>

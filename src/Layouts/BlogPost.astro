@@ -17,32 +17,58 @@ let image = content.img;
 if (!image && content._images.length && settings.postPicture === "first") {
     image = content._images[0].url;
 }
+if (!image) {
+    try {
+        image = (await fetch("https://imgapi.cn/api.php?fl=dongman&gs=images"))
+            .url;
+    } catch (error) {
+        console.error(error);
+    }
+}
 // "https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif"
 ---
 
 <SitePage title={content.title} desc={content.desc}>
-    <Hero
-        bg={image}
-    />
-    <div class="p-4 pb-10 max-w-3xl mx-auto">
-        <main> 
+    <Hero bg={image} position={content.imgPosition}>
+        {content.title}
+    </Hero>
+    <div class="p-4 pb-10 max-w-4xl mx-auto">
+        <main>
             <article>
-                <div class="py-6 prose mx-auto">
-                    <h1 class="text-[30px] my-[20px]">{content.title}</h1>
-                    <div class="flex gap-3 my-[20px]">
-                        <span class="badge badge-ghost">
-                            <Date date={content.pubDate} />
-                        </span>
+                <!-- prose -->
+                <div class="py-6 mx-auto">
+                    <h1 class="text-[30px] my-[20px] gap-3 md:flex block items-baseline">
+                        <div>{content.title}</div>
                         {
                             content.author && (
-                                <span class="text-sm text-base-content/70">
-                                    By {content.author}
-                                </span>
+                                <div class="text-sm text-base-content/70 text-gray-400 align-middle">
+                                    <Date date={content.pubDate} /> By{" "}
+                                    {content.author}
+                                </div>
                             )
                         }
-                    </div>
+                    </h1>
+
+                    {
+                        content.categories && !!content.categories.length && (
+                            <div class="flex gap-3 my-[20px] items-center">
+                                {content.categories.map((v) => (
+                                    <a
+                                        href={`/category/${v}/1`}
+                                        class="bg-orange-600 text-white px-[12px] py-[6px] leading-[1] rounded-[15px]"
+                                    >
+                                        {v}
+                                    </a>
+                                ))}
+                            </div>
+                        )
+                    }
+
+                    <hr class="my-[30px]" />
                     <div class="relative">
-                        <slot />
+                        <div class="typography">
+                            <slot />
+                        </div>
                         {
                             showToc &&
                                 !!content._head &&
@@ -59,7 +85,7 @@ if (!image && content._images.length && settings.postPicture === "first") {
                                                     }}
                                                     href={"#" + v.title}
                                                 >
-                                                    {v.title}
+                                                    - {v.title}
                                                 </a>
                                             ))}
                                         </div>
