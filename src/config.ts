@@ -1,5 +1,5 @@
 // 首页分页个数
-export const pageSize = 3;
+export const pageSize = 10;
 // 站点信息配置
 export const siteInfo = {
   siteName: "Art Blog",
@@ -26,11 +26,6 @@ export const nav = [
     title: "联系",
     slug: "/contact",
     icon: "emojione:call-me-hand",
-    children: []
-  },
-  {
-    title: "效果不错的站点",
-    slug: "/site" ,
     children: []
   },
 ];

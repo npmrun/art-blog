@@ -17,6 +17,7 @@ export type Post = {
   _head: { level: number; title: string; raw: string }[];
   img: string;
   imgPosition: "center" | "top" | "bottom";
+  imgHideTitle: boolean;
   Content: MarkdownInstance<any>["Content"];
   postPicture: string;
   toc: boolean;

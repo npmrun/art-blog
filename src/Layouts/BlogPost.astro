@@ -30,7 +30,7 @@ if (!image) {
 
 <SitePage title={content.title} desc={content.desc}>
     <Hero bg={image} position={content.imgPosition}>
-        {content.title}
+        {!content.imgHideTitle && content.title}
     </Hero>
     <div class="p-4 pb-10 max-w-4xl mx-auto">
         <main>
@@ -42,7 +42,7 @@ if (!image) {
                         {
                             content.author && (
                                 <div class="text-sm text-base-content/70 text-gray-400 align-middle">
-                                    <Date date={content.pubDate} /> By{" "}
+                                    {content.pubDate && <Date date={content.pubDate} />} By{" "}
                                     {content.author}
                                 </div>
                             )
@@ -66,6 +66,7 @@ if (!image) {
 
                     <hr class="my-[30px]" />
                     <div class="relative">
+                        <script src="@blog/scripts/main.ts"></script>
                         <div class="typography">
                             <slot />
                         </div>

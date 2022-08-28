@@ -15,8 +15,8 @@ pubDate: 文章发布日期
 updatedDate: 文章修改日期
 author: 作者
 img: 文章头图
-imgWidth: 头图宽
-imgHeight: 头图高
+imgPosition: 头图展示位置
+imgHideTitle: 是否隐藏头图中间的文字
 categories: 
   - 分类1
   - 分类2

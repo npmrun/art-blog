@@ -14,9 +14,13 @@ const post: Post = Astro.props.post;
                 {post.title}
             </a>
         </h2>
-        <span class="text-[12px] text-white font-normal">
-            创建于：{post.pubDate}
-        </span>
+        {
+            post.pubDate && (
+                <span class="text-[12px] text-white font-normal">
+                    创建于：{post.pubDate}
+                </span>
+            )
+        }
         <div class="text-xl font-normal">
             {
                 post.categories &&
