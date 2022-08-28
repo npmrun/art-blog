@@ -1,3 +1,60 @@
 ---
-
+import ThemeChange from "@blog/components/ThemeChange.astro";
+import { nav, siteInfo } from "@root/src/config";
+import { Icon } from "astro-icon";
+import Menu from "./_ui/Menu.astro";
+import MenuItem from "./_ui/MenuItem.astro";
 ---
+
+<script src="./main.ts"></script>
+<style lang="scss">
+    .bo {
+        @apply bg-white/80 text-black;
+    }
+</style>
+<div
+    id="navbar"
+    class="fixed z-[99] w-full bg-white/5 shadow backdrop-blur text-white transition"
+>
+    <div class="px-[25px] h-[45px] flex items-center justify-between">
+        <a href="/" class="text-[20px] flex items-center group">
+            <img
+                src={siteInfo.icon}
+                alt={siteInfo.siteName}
+                class="h-10 w-10 rounded-full"
+            />
+            <span class="ml-3 group-hover:underline group-hover:decoration-wavy"
+                >{siteInfo.siteName}
+            </span>
+        </a>
+        <Menu className="ml-[35px] w-0 flex-1 hidden md:flex">
+            {
+                nav.map((item, index) => (
+                    <MenuItem href={item.slug}>
+                        {item.icon && (
+                            <Icon class="h-5 w-5 mr-[4px]" name={item.icon} />
+                        )}
+                        <span class="text-[14px]">{item.title}</span>
+                        {!!item.children?.length && (
+                            <svg
+                                class="fill-current"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                            </svg>
+                        )}
+                    </MenuItem>
+                ))
+            }
+        </Menu>
+        <Menu>
+            <div class="md:hidden">
+                sadas
+            </div>
+            <ThemeChange />
+        </Menu>
+    </div>
+</div>

@@ -11,18 +11,20 @@ export const siteInfo = {
 
 export const nav = [
   {
+    title: "分类",
+    slug: "/categories",
+    children: []
+  },
+  {
     title: "关于",
     slug: "/about",
+    icon: "emojione-v1:beer-mug",
     children: []
   },
   {
     title: "联系",
     slug: "/contact",
-    children: []
-  },
-  {
-    title: "分类",
-    slug: "/categories",
+    icon: "emojione:call-me-hand",
     children: []
   },
   {

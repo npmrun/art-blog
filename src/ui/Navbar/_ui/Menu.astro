@@ -1,0 +1,7 @@
+---
+const { className } = Astro.props
+---
+
+<ul class={`flex items-center ${className}`}>
+    <slot></slot>
+</ul>

@@ -1,5 +1,5 @@
 ---
-import SitePage from "@blog/Layouts/Base/SitePage.astro";
+import BlogPage from "@blog/Layouts/BlogPage.astro";
 import Card from "@blog/components/category/Card.vue";
 import { published } from "@blog/utils";
 import { settings } from "@blog/config";
@@ -55,8 +55,8 @@ let sortedCategories =
           });
 ---
 
-<SitePage>
+<BlogPage>
     <main class="flex flex-wrap justify-center gap-8">
         {sortedCategories.map((category: any) => <Card category={category} />)}
     </main>
-</SitePage>
+</BlogPage>

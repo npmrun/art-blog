@@ -2,23 +2,24 @@
 import { published } from "@blog/utils";
 import Preview from "@blog/ui/Preview/Preview.astro";
 import Pagination from "@blog/components/Pagination.astro";
-import SitePage from "@blog/Layouts/Base/SitePage.astro";
 import { pageSize } from "@blog/config";
+import BlogPage from "@blog/Layouts/BlogPage.astro";
 
 const allPosts = await published();
 
 const totalPage = Math.max(1, Math.ceil(allPosts.length / pageSize));
 ---
-<SitePage>
-	<!-- https://github.com/iozcelik/SarissaBlogAstroStarter/blob/master/src/pages/posts/%5Bpage%5D.astro -->
-	<main>
-		{
-			allPosts
-				.slice(0, pageSize)
-				.map((p, i) => (
-					<Preview post={p} direction={i % 2 === 0 ? "left" : ""} />
-				))
-		}
-		<Pagination currentPage="1" totalPage={totalPage} url="pages" />
-	</main>
-</SitePage>
+
+<BlogPage>
+    <!-- https://github.com/iozcelik/SarissaBlogAstroStarter/blob/master/src/pages/posts/%5Bpage%5D.astro -->
+    <main>
+        {
+            allPosts
+                .slice(0, pageSize)
+                .map((p, i) => (
+                    <Preview post={p} direction={i % 2 === 0 ? "left" : ""} />
+                ))
+        }
+        <Pagination currentPage="1" totalPage={totalPage} url="pages" />
+    </main>
+</BlogPage>

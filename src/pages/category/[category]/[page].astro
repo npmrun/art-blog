@@ -2,7 +2,7 @@
 import Preview from "@blog/ui/Preview/Preview.astro";
 import Pagination from "@blog/components/Pagination.astro";
 import { pageSize } from "@blog/config";
-import SitePage from "@blog/Layouts/Base/SitePage.astro";
+import BlogPage from "@blog/Layouts/BlogPage.astro";
 import { published } from "@blog/utils";
 
 export async function getStaticPaths({ paginate }) {
@@ -28,7 +28,7 @@ const capitalize = ([firstLetter, ...restOfWord]) =>
     firstLetter.toUpperCase() + restOfWord.join("");
 ---
 
-<SitePage title={capitalize(params.category)}>
+<BlogPage title={capitalize(params.category)}>
     <div class="flex p-4 items-center text-lg bg-orange-300 dark:bg-sky-500/100 rounded-md"> 
         <div class="font-bold mx-[20px]">{capitalize(params.category)}</div>
         <div class="ml-[15px]">{page.total} 个结果</div>
@@ -49,4 +49,4 @@ const capitalize = ([firstLetter, ...restOfWord]) =>
         totalPage={page.lastPage}
         url={url}
     />
-</SitePage>
+</BlogPage>

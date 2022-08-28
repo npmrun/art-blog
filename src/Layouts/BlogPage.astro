@@ -1,0 +1,20 @@
+---
+import SitePage from "@blog/Layouts/Base/SitePage.astro";
+import Hero from "@blog/ui/Hero/Hero.astro";
+
+interface Props {
+    title?: string;
+    desc?: string;
+}
+
+const { title, desc } = Astro.props as Props;
+---
+
+<SitePage title={title} desc={desc}>
+    <Hero
+        bg="https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif"
+    />
+    <div class="p-4 pb-10 max-w-3xl mx-auto">
+        <slot />
+    </div>
+</SitePage>
