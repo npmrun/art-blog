@@ -36,6 +36,10 @@ export default defineConfig({
     },
     site: "https://art.xieyaxin.top/",
     integrations: [
+        tailwind({
+            // Example: Provide a custom path to a Tailwind config file
+            config: { path: "./tailwind.config.js" },
+        }),
         partytown(),
         compress(),
         robotsTxt(),
@@ -46,11 +50,7 @@ export default defineConfig({
                 extends: [exampleRemarkPlugin],
             },
         }),
-        sitemap(),
-        tailwind({
-            // Example: Provide a custom path to a Tailwind config file
-            config: { path: "./tailwind.config.js" },
-        }),
+        sitemap()
     ],
     vite: {
         ssr: {
