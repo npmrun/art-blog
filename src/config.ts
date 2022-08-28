@@ -14,17 +14,20 @@ export const nav = [
   {
     title: "分类",
     slug: "/categories",
+    icon: false,
     children: []
   },
   {
     title: "关于",
     slug: "/about",
+    icon: false,
     // icon: "emojione-v1:beer-mug",
     children: []
   },
   {
     title: "联系",
     slug: "/contact",
+    icon: false,
     // icon: "emojione:call-me-hand",
     children: []
   },

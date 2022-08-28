@@ -11,6 +11,7 @@ Simple blog template with Astro, Tailwind CSS, daisyUI
 ## 注意
 
 - CSS 用 tailwindcss 或者 scss,如果直接用 style 的话无法 autoprefixer
+- 开发时CSS正常，打包后可能会出现顺序问题
 
 ```
 node: 16.15.0
