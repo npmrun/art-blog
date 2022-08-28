@@ -19,13 +19,13 @@ export const nav = [
   {
     title: "关于",
     slug: "/about",
-    icon: "emojione-v1:beer-mug",
+    // icon: "emojione-v1:beer-mug",
     children: []
   },
   {
     title: "联系",
     slug: "/contact",
-    icon: "emojione:call-me-hand",
+    // icon: "emojione:call-me-hand",
     children: []
   },
 ];
