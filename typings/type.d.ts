@@ -15,6 +15,7 @@ export type Post = {
   _rawString: string;
   _images: Record<"name" | "url" | "alt", string>[];
   _head: { level: number; title: string; raw: string }[];
+  top: boolean;
   img: string;
   imgPosition: "center" | "top" | "bottom";
   imgHideTitle: boolean;

@@ -14,11 +14,8 @@ if (!image && post._images.length && settings.postPicture === "first") {
 }
 if (!image) {
     try {
-        image = (
-            await fetch(
-                "https://imgapi.cn/api.php?fl=dongman&gs=images"
-            )
-        ).url;
+        image = (await fetch("https://imgapi.cn/api.php?fl=dongman&gs=images"))
+            .url;
     } catch (error) {
         console.error(error);
     }
@@ -46,7 +43,7 @@ if (!image) {
     />
     <a
         href={getPostsUrl(post.slug)}
-        class={"shrink-0 w-4/12 h-full md:block hidden " +
+        class={"shrink-0 w-4/12 h-full md:block relative hidden " +
             (direction === "left" ? "clip_left" : "clip_right")}
         style="z-index: 1;height: 100%;"
     >
@@ -55,10 +52,26 @@ if (!image) {
             loading="eager"
             alt={post.title}
             attributes={{
-                picture: { class: "w-full !h-full bg-base-200 transition-transform group-hover:rotate-6 group-hover:scale-110" },
+                picture: {
+                    class: "w-full !h-full bg-base-200 transition-transform group-hover:rotate-6 group-hover:scale-110",
+                },
                 img: { class: "w-full !h-full object-cover" },
             }}
         />
+        {
+            post.top && (
+                <div
+                    class={
+                        "absolute text-white bg-orange-400 w-[80%] text-center " +
+                        (direction === "left"
+                            ? "right-[52%] top-[4%] -rotate-[45deg]"
+                            : "left-[52%] top-[4%] rotate-[45deg]")
+                    }
+                >
+                    置顶
+                </div>
+            )
+        }
     </a>
     <Content post={post} />
 </div>

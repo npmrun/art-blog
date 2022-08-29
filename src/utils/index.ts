@@ -45,10 +45,24 @@ export function single(post: MarkdownInstance<any>): Post {
  */
 export async function published(): Promise<Post[]> {
   const posts = await getPosts();
-  const allPosts = posts
+  let allPosts = posts
     .filter((post) => post.frontmatter.title)
     .map((post) => single(post))
     .filter((post) => MODE === 'development' || !post.draft)
-    .sort((a, b) => b.pubTimestamp - a.pubTimestamp);
+  allPosts = allPosts.sort((a, b) => {
+      if(b.pubTimestamp && a.pubTimestamp){
+          return b.pubTimestamp - a.pubTimestamp
+      }else{
+          return -1
+      }
+    })
+  for (let i = 0; i < allPosts.length; i++) {
+    const post = allPosts[i];
+    if(post.top){
+        const delOne = allPosts.splice(i, 1);
+        allPosts.unshift(delOne[0])
+    }
+  }
+
   return allPosts;
 }
