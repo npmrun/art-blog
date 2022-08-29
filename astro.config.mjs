@@ -39,6 +39,7 @@ export default defineConfig({
         tailwind({
             // Example: Provide a custom path to a Tailwind config file
             config: { path: "./tailwind.config.js" },
+            applyBaseStyles: false, // 手动引入，控制CSS打包后的顺序
         }),
         partytown(),
         compress(),

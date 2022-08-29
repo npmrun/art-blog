@@ -4,9 +4,13 @@ import { nav, siteInfo } from "@root/src/config";
 import { Icon } from "astro-icon";
 import Menu from "./_ui/Menu.astro";
 import MenuItem from "./_ui/MenuItem.astro";
-import "./style.scss"
 ---
 <script src="./main.ts"></script>
+<style lang="scss">
+    .hover-navbar {
+        @apply bg-white/80 text-black;
+    }
+</style>
 <div
     id="navbar"
     class="fixed z-[99] w-full bg-white/5 shadow backdrop-blur text-white transition"
