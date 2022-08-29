@@ -31,6 +31,13 @@ export const nav = [
     // icon: "emojione:call-me-hand",
     children: []
   },
+  {
+    title: "Demo",
+    slug: "/demo",
+    icon: false,
+    // icon: "emojione:call-me-hand",
+    children: []
+  },
 ];
 
 export const settings = {

@@ -1,0 +1,69 @@
+---
+import BlogPage from "@blog/Layouts/BlogPage.astro";
+import { praseDemo } from "@blog/utils/demo";
+
+const demoes = praseDemo();
+
+const keys = Object.keys(demoes);
+---
+
+<BlogPage hero="/bg.jpg" heroPosition="center">
+    <main class="relative demoes">
+        <div class="loading bg-black/10 text-white flex items-center justify-center text-gray-400 absolute top-0 right-0 bottom-0 left-0">暂无展示</div>
+        <iframe
+            id="iframeDemo"
+            class="mb-[50px]"
+            height="500px"
+            frameborder="0">
+        </iframe>
+        <ul
+            class="absolute right-full top-0 whitespace-nowrap text-right mr-[15px]"
+        >
+            {
+                keys &&
+                    keys.map((v) => (
+                        <>
+                            <li class="text-gray-400 text-[14px] my-[8px]">
+                                {v}
+                            </li>
+                            {demoes[v].map((v) => (
+                                <li
+                                    data-route={v.route}
+                                    class="demo cursor-pointer"
+                                    title={v.desc}
+                                >
+                                    {v.title}
+                                </li>
+                            ))}
+                        </>
+                    ))
+            }
+        </ul>
+    </main>
+</BlogPage>
+<script lang="ts">
+    const iframeDemo = document.getElementById("iframeDemo");
+    const liEl = document.querySelectorAll(".demoes .demo");
+    const loadingEl = document.querySelector(".demoes .loading");
+    liEl.forEach((li) => {
+        li.addEventListener("click", (evt) => {
+            const route = evt.target.dataset.route;
+            if (route) {
+                iframeDemo.src = route;
+                loadingEl.style.display = "flex";
+                loadingEl.innerHTML = "加载中...";
+                if (iframeDemo.attachEvent) {
+                    // IE
+                    iframeDemo.attachEvent("onload", function () {
+                        loadingEl.style.display = "none";
+                    });
+                } else {
+                    // 非IE
+                    iframeDemo.onload = function () {
+                        loadingEl.style.display = "none";
+                    };
+                }
+            }
+        });
+    });
+</script>

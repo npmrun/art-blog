@@ -12,7 +12,7 @@ const { title, desc, icon } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang={siteInfo.lang}>
+<html lang={siteInfo.lang} class="h-full">
   <head>
     <BaseHead
       title={title || siteInfo.siteName}
@@ -22,7 +22,7 @@ const { title, desc, icon } = Astro.props as Props;
     <slot name="head" />
     <script src="/theme-change.js" is:inline></script>
 </head>
-<body class="dark:brightness-[.65] bg-slate-100 min-h-full">
+<body class="dark:brightness-[.65] bg-slate-100 h-full">
     <slot />
 </body>
 </html>

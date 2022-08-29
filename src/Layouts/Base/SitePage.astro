@@ -15,9 +15,9 @@ const { title, desc } = Astro.props as Props;
 <Base title={title} desc={desc}>
     <div
         id="app"
-        class="flex flex-col items-center"
+        class="flex flex-col items-center h-full"
     >
-        <div class="w-full flex-grow relative z-[1]">
+        <div class="w-full flex-1 relative z-[1]">
             <Navbar>
                 <ThemeChange />
             </Navbar>
