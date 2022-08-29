@@ -10,7 +10,7 @@ const allPosts = await published();
 const totalPage = Math.max(1, Math.ceil(allPosts.length / pageSize));
 ---
 
-<BlogPage>
+<BlogPage hero="/bg.jpg" heroPosition="center">
     <!-- https://github.com/iozcelik/SarissaBlogAstroStarter/blob/master/src/pages/posts/%5Bpage%5D.astro -->
     <main>
         {
