@@ -166,6 +166,15 @@ $linght-color: rgba(234, 88, 12, 0.2);
     font-weight: bold;
     color: $linght-color;
 }
+
+.typography mjx-container[jax="SVG"]{
+    display: inline-block;
+    vertical-align: middle;
+}
+.typography mjx-container[jax="SVG"][display="true"] svg{
+    margin: 0 auto;
+}
+
 // .typography code {
 //     border-radius: 0.25rem;
 //     background-color: #fff5f5;
