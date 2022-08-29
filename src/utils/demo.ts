@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 function getHtml() {
     return glob.sync("**/*.html", {
-        cwd: path.resolve(__dirname, "../../public/demo/"),
+        cwd: path.resolve(process.cwd(), "./public/demo/"),
     });
 }
 
@@ -19,7 +19,7 @@ function praseDemo() {
         const route = "/demo/" + element;
         let title = "未命名 | " + route;
         let desc = "";
-        const p = path.resolve(__dirname, "../../public/demo/", element);
+        const p = path.resolve(process.cwd(), "./public/demo/", element);
         if (fs.existsSync(p)) {
             const content = fs.readFileSync(p, { encoding: "utf-8" });
             const titleReg = /<title>(.*?)<\/title>/i.exec(content);
