@@ -13,7 +13,16 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
 ></script>
-
+<script
+    src="https://cdn.jsdelivr.net/gh/MihaiValentin/lunr-languages/lunr.stemmer.support.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<script
+    src="https://cdn.jsdelivr.net/gh/MihaiValentin/lunr-languages/lunr.zh.js"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
 <section>
     <div class="searchBoxContainer">
         <input
@@ -21,7 +30,7 @@
             id="searchBox"
             autocomplete="on"
             class="searchBox w-full px-3 py-2"
-            placeholder="Search..."
+            placeholder="搜索..."
             data-test="search-input"
         />
     </div>
@@ -76,6 +85,7 @@
                 if (this.status >= 200 && this.status < 400) {
                     pagesIndex = JSON.parse(this.response);
                     lunrIndex = lunr(function () {
+                        this.use(lunr.zh);
                         this.tokenizer = bigramTokeniser;
                         this.pipeline.reset();
                         this.ref("slug");
@@ -155,24 +165,34 @@
                 let resultPage = document.createElement("div");
                 resultPage.className = "searchResultPage";
                 let metadata = lunrResult[idx].matchData.metadata;
-                let matchPosition =
-                    metadata[Object.keys(metadata)[0]].body.position[0][0];
-                let bodyStartPosition =
-                    matchPosition - BODY_LENGTH / 2 > 0
-                        ? matchPosition - BODY_LENGTH / 2
-                        : 0;
                 let resultTitle = document.createElement("a");
                 resultTitle.className = "searchResultTitle";
                 resultTitle.href = `/post/${result.slug}`;
                 resultTitle.innerHTML = result.title;
                 resultPage.append(resultTitle);
-                let resultBody = document.createElement("div");
-                resultBody.className = "searchResultBody";
-                resultBody.innerHTML = result.body.substr(
-                    bodyStartPosition,
-                    BODY_LENGTH
-                );
-                resultPage.append(resultBody);
+                const body = metadata[Object.keys(metadata)[0]].body
+                if(body){
+                    let matchPosition = body.position[0][0];
+                    let bodyStartPosition =
+                    matchPosition - BODY_LENGTH / 2 > 0
+                        ? matchPosition - BODY_LENGTH / 2
+                        : 0;
+                    let resultBody = document.createElement("div");
+                    resultBody.className = "searchResultBody";
+                    resultBody.innerHTML = result.body.substr(
+                        bodyStartPosition,
+                        BODY_LENGTH
+                    );
+                    resultPage.append(resultBody);
+                }else{
+                    let resultBody = document.createElement("div");
+                    resultBody.className = "searchResultBody";
+                    resultBody.innerHTML = result.body.substr(
+                        0,
+                        120
+                    );
+                    resultPage.append(resultBody);
+                }
                 searchResults.append(resultPage);
                 instance.mark(query);
             });
@@ -195,9 +215,9 @@
             searchResultsArea.style.display = "block";
         }
         const searchBox = document.querySelector("#searchBox");
-        searchBox.addEventListener("select", ()=>{
+        searchBox.addEventListener("select", () => {
             console.log("select");
-        })
+        });
         setTimeout(() => {
             initSeach();
         }, 500);

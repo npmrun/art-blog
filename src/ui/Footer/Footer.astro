@@ -1,10 +1,22 @@
 ---
 import { siteInfo } from "@blog/config";
 ---
-
+<footer class="p-4 text-gray-400">
+    <p class="text-sm text-base-content/70 text-center mb-2">
+        {siteInfo.siteDesc}
+    </p>
+    <p id="runtime" class="text-xs text-base-content/70 text-center cursor-pointer mb-2">本站勉强运行: 0秒</p>
+    <p class="text-xs text-base-content/70 text-center">
+        &copy; {new Date().getFullYear()} –
+        <a class="link" href={siteInfo.github} target="_blank">
+            {siteInfo.siteName}
+        </a>
+        Theme, Powered by
+        <a class="link" href="https://astro.build/" target="_blank"> Astro</a>
+    </p>
+</footer>
 <script lang="js">
-    setTimeout(() => {
-        const el = document.getElementById("runtime")
+    const el = document.getElementById("runtime")
         function runtime() {
             X = new Date("8/2/2021 10:28:00");
             Y = new Date();
@@ -20,21 +32,6 @@ import { siteInfo } from "@blog/config";
             el.innerHTML =
                 "本站勉强运行: " + A + "天" + B + "小时" + C + "分" + D + "秒";
         }
-        setInterval(runtime, 1000);
-        runtime()
-    }, 0);
+    setInterval(runtime, 1000);
+    runtime()
 </script>
-<footer class="p-4 text-gray-400">
-    <p class="text-sm text-base-content/70 text-center mb-2">
-        {siteInfo.siteDesc}
-    </p>
-    <p id="runtime" class="text-xs text-base-content/70 text-center cursor-pointer mb-2">本站勉强运行: 0秒</p>
-    <p class="text-xs text-base-content/70 text-center">
-        &copy; {new Date().getFullYear()} –
-        <a class="link" href={siteInfo.github} target="_blank">
-            {siteInfo.siteName}
-        </a>
-        Theme, Powered by
-        <a class="link" href="https://astro.build/" target="_blank"> Astro</a>
-    </p>
-</footer>
