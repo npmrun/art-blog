@@ -5,6 +5,7 @@ import { Icon } from "astro-icon";
 import Menu from "./_ui/Menu.astro";
 import MenuItem from "./_ui/MenuItem.astro";
 ---
+
 <script src="./main.ts"></script>
 <style lang="scss">
     .hover-navbar {
@@ -41,7 +42,6 @@ import MenuItem from "./_ui/MenuItem.astro";
                                 width="20"
                                 height="20"
                                 viewBox="0 0 24 24"
-
                             >
                                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                             </svg>
@@ -50,9 +50,78 @@ import MenuItem from "./_ui/MenuItem.astro";
                 ))
             }
         </Menu>
-        <!-- <Menu>
-            <div class="md:hidden"></div>
+        <Menu>
             <ThemeChange />
-        </Menu> -->
+            <div id="meunButton" class="md:hidden p-[8px] text-[14px]">菜单</div>
+        </Menu>
     </div>
 </div>
+
+<div
+    id="mobile-mask"
+    class="md:hidden fixed left-0 right-0 bottom-0 top-0 bg-black/30 z-[99] pointer-events-none opacity-0 transition-opacity duration-300"
+>
+</div>
+<div
+    id="mobile-menu"
+    class="md:hidden fixed right-0 top-0 bottom-0 z-[99] w-[60%] bg-white transition-transform duration-300 translate-x-full"
+>
+    <div class="px-[8px] py-[12px] flex flex-col h-full">
+        <div class="flex items-center border-b pb-[8px]">
+            <img
+                src={siteInfo.icon}
+                alt={siteInfo.siteName}
+                class="h-10 w-10 rounded-full"
+            />
+            <span class="ml-3 group-hover:underline group-hover:decoration-wavy"
+                >{siteInfo.siteName}
+            </span>
+        </div>
+        <ul class="mt-[15px] flex-1 h-0 overflow-auto">
+            {
+                nav.map((item, index) => (
+                    <li>
+                        <a
+                            href={item.slug}
+                            class="block px-[15px] h-[45px] leading-[45px] active:bg-black/4."
+                        >
+                            {item.icon && (
+                                <Icon
+                                    class="h-5 w-5 mr-[4px]"
+                                    name={item.icon}
+                                />
+                            )}
+                            {item.title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>
+<style lang="scss">
+    .show {
+        transform: translateX(0);
+    }
+</style>
+<script lang="ts">
+    const meunButton = document.getElementById("meunButton");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMask = document.getElementById("mobile-mask");
+    meunButton.addEventListener("click", () => {
+        let isHave = mobileMenu.classList.contains("show");
+        if (!isHave) {
+            mobileMenu.classList.add("show");
+            mobileMask.style.opacity = 1;
+            mobileMask.style.pointerEvents = "auto";
+        }
+    });
+    mobileMask.addEventListener("click", () => {
+        let isHave = mobileMenu.classList.contains("show");
+        if (isHave) {
+            mobileMenu.classList.remove("show");
+            mobileMask.style.opacity = 0;
+            mobileMask.style.pointerEvents = "none";
+        }
+    });
+</script>
