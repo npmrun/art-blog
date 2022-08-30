@@ -12,6 +12,12 @@ export const siteInfo = {
 
 export const nav = [
   {
+    title: "搜索",
+    slug: "/search",
+    icon: false,
+    children: []
+  },
+  {
     title: "分类",
     slug: "/categories",
     icon: false,
