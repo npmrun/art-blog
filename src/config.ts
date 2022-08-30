@@ -1,5 +1,5 @@
 // 首页分页个数
-export const pageSize = 10;
+export const pageSize = 3;
 // 站点信息配置
 export const siteInfo = {
   siteName: "Art Blog",

@@ -19,20 +19,21 @@
         <input
             type="text"
             id="searchBox"
+            autocomplete="on"
             class="searchBox w-full px-3 py-2"
             placeholder="Search..."
             data-test="search-input"
         />
     </div>
     <style lang="scss">
-        .searchResults{
-            :global(.searchResultPage){
+        .searchResults {
+            :global(.searchResultPage) {
                 padding: 15px 0;
             }
-            :global(.searchResultTitle){
+            :global(.searchResultTitle) {
                 color: #fd2d78 !important;
             }
-            :global(.searchResultBody){
+            :global(.searchResultBody) {
                 margin-top: 4px;
             }
         }
@@ -40,8 +41,8 @@
     <!-- Search Results -->
     <div id="searchResults" class="searchResults lg:pl-8"></div>
 
-    <!-- Search JS -->
-    <script>
+    <!-- Search TS -->
+    <script lang="ts">
         let lunrIndex;
         let lunrResult;
         let pagesIndex;
@@ -178,9 +179,31 @@
         };
         initLunr();
         initUI();
+
+        function initSeach() {
+            const searchBox = document.querySelector("#searchBox");
+            if (searchBox === null) {
+                return;
+            }
+            let searchResultsArea = document.querySelector("#searchResults");
+            let query = searchBox.value;
+            if (query.length < 2) {
+                searchResultsArea.style.display = "none";
+                return;
+            }
+            renderResults(search(query));
+            searchResultsArea.style.display = "block";
+        }
+        const searchBox = document.querySelector("#searchBox");
+        searchBox.addEventListener("select", ()=>{
+            console.log("select");
+        })
+        setTimeout(() => {
+            initSeach();
+        }, 500);
     </script>
 
-    <script client:load>
+    <script is:inline>
         document.getElementById("searchBox").focus();
     </script>
 </section>
