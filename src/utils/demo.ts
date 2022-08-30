@@ -33,7 +33,7 @@ function praseDemo() {
                 desc = descReg[1];
             }
         }
-        const dir = path.parse(route).dir;
+        const dir = path.parse(route).dir.replace(/\/demo/, "Demo");
         if (!result[dir]) result[dir] = [];
         result[dir].push({
             title,
@@ -42,7 +42,7 @@ function praseDemo() {
             route,
         });
     });
-    return result
+    return result;
 }
 
 export { praseDemo };
