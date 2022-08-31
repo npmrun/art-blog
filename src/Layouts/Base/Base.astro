@@ -22,7 +22,8 @@ const { title, desc, icon } = Astro.props as Props;
     <slot name="head" />
     <script src="/theme-change.js" is:inline></script>
 </head>
-<body class="dark:brightness-[.65] bg-slate-100 h-full">
+<!-- dark:brightness-[.65] -->
+<body class=" bg-slate-100 h-full">
     <slot />
 </body>
 </html>

@@ -12,20 +12,8 @@ const keys = Object.keys(demoes);
     heroPosition="center"
 >
     <main class="relative demoes">
-        <div
-            class="loading bg-black/10 text-white flex items-center justify-center absolute top-0 right-0 bottom-0 left-0"
-        >
-            暂无展示
-        </div>
-        <iframe
-            id="iframeDemo"
-            class="mb-[50px]"
-            height="500px"
-            frameborder="0"
-        >
-        </iframe>
         <ul
-            class="absolute right-full top-0 whitespace-nowrap text-right mr-[15px]"
+            class="right-full top-0 whitespace-nowrap text-right mr-[15px] md:absolute static"
         >
             {
                 keys &&
@@ -69,6 +57,20 @@ const keys = Object.keys(demoes);
                 }
             </style>
         </ul>
+        <div class="mb-[50px] h-[500px] relative">
+            <iframe
+                id="iframeDemo"
+                class="mb-[50px]"
+                height="500px"
+                frameborder="0"
+            >
+            </iframe>
+            <div
+                class="loading bg-black/10 text-white flex items-center justify-center absolute top-0 right-0 bottom-0 left-0"
+            >
+                暂无展示
+            </div>
+        </div>
     </main>
 </BlogPage>
 <script lang="ts">
