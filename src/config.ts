@@ -1,3 +1,8 @@
+const { MODE } = import.meta.env;
+
+export const isDev = MODE === "development";
+export const isProd = MODE === "production";
+
 // 首页分页个数
 export const pageSize = 3;
 // 站点信息配置
@@ -10,6 +15,7 @@ export const siteInfo = {
     github: "https://github.com/npmrun/art-blog",
     hero: "https://tva3.sinaimg.cn/large/9bd9b167gy1fwsgda81zhj21hc0u0b29.jpg",
     heroPosition: "center",
+    startTime: "6/8/2022 10:28:00",
 };
 
 export const nav = [
@@ -54,7 +60,7 @@ export const settings = {
         {
             name: "Demo",
             desc: "一些简单的Demo测试",
-            image: undefined,
+            image: "https://tva3.sinaimg.cn/large/9bd9b167gy1g4lhmmp7aqj21hc0xc4ii.jpg",
             order: 1,
         },
         {

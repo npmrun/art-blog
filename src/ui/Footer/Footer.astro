@@ -15,10 +15,10 @@ import { siteInfo } from "@blog/config";
         <a class="link" href="https://astro.build/" target="_blank"> Astro</a>
     </p>
 </footer>
-<script lang="js">
+<script lang="js" define:vars={{ startTime: siteInfo.startTime }}>
     const el = document.getElementById("runtime")
         function runtime() {
-            X = new Date("8/2/2021 10:28:00");
+            X = new Date(startTime);
             Y = new Date();
             T = Y.getTime() - X.getTime();
             M = 24 * 60 * 60 * 1000;

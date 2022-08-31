@@ -1,7 +1,7 @@
 ---
 import type { Post } from "#/type";
 import { getPostsUrl } from "@blog/utils";
-import { settings } from "@root/src/config";
+import { settings, siteInfo } from "@root/src/config";
 import { Picture } from "astro-imagetools/components";
 import Content from "./Content.astro";
 
@@ -14,8 +14,9 @@ if (!image && post._images.length && settings.postPicture === "first") {
 }
 if (!image) {
     try {
-        image = (await fetch("https://imgapi.cn/api.php?fl=dongman&gs=images"))
-            .url;
+        image = siteInfo.hero
+        // image = (await fetch("https://imgapi.cn/api.php?fl=dongman&gs=images"))
+        //     .url;
     } catch (error) {
         console.error(error);
     }

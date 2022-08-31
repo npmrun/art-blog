@@ -1,7 +1,7 @@
 ---
 import SitePage from "@blog/Layouts/Base/SitePage.astro";
 import Date from "@blog/components/utilities/Date.astro";
-import { settings } from "@blog/config";
+import { isDev, isProd, settings, siteInfo } from "@blog/config";
 import type { Post } from "#/type";
 import Hero from "@blog/ui/Hero/Hero.astro";
 
@@ -19,8 +19,9 @@ if (!image && content._images.length && settings.postPicture === "first") {
 }
 if (!image) {
     try {
-        image = (await fetch("https://imgapi.cn/api.php?fl=dongman&gs=images"))
-            .url;
+        image = siteInfo.hero
+        // image = (await fetch("https://imgapi.cn/api.php?fl=dongman&gs=images"))
+        //     .url;
     } catch (error) {
         console.error(error);
     }
@@ -66,7 +67,7 @@ if (!image) {
 
                     <hr class="my-[30px]" />
                     <div class="relative">
-                        <div class="typography">
+                        <div class:list={['typography', content.mode]}>
                             <slot />
                         </div>
                         <script src="@blog/scripts/main.ts"></script>
@@ -97,24 +98,29 @@ if (!image) {
                 </div>
             </article>
             <!-- https://giscus.app/zh-CN -->
-            <!-- <script is:inline src="https://giscus.app/client.js"
-                data-repo="npmrun/art-blog"
-                data-repo-id="R_kgDOH218pQ"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOH218pc4CRCN1"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="preferred_color_scheme"
-                data-lang="zh-CN"
-                data-loading="lazy"
-                crossorigin="anonymous"
-                async>
-            </script>
-            <div class="giscus"></div>
-            <div class="giscus-frame"></div> -->
+            <!-- 构建才打开评论 -->
+            {
+                isProd && (
+                    <script is:inline src="https://giscus.app/client.js"
+                        data-repo="npmrun/art-blog"
+                        data-repo-id="R_kgDOH218pQ"
+                        data-category="Announcements"
+                        data-category-id="DIC_kwDOH218pc4CRCN1"
+                        data-mapping="pathname"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="top"
+                        data-theme="preferred_color_scheme"
+                        data-lang="zh-CN"
+                        data-loading="lazy"
+                        crossorigin="anonymous"
+                        async>
+                    </script>
+                    <div class="giscus"></div>
+                    <div class="giscus-frame"></div>
+                )
+            }
         </main>
     </div>
 </SitePage>

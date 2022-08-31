@@ -22,4 +22,5 @@ export type Post = {
   Content: MarkdownInstance<any>["Content"];
   postPicture: string;
   toc: boolean;
+  mode?: "indent"; // 首行段落缩进
 };

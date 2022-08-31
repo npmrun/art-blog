@@ -5,6 +5,16 @@ import ClipboardJS from "clipboard";
 // https://github.com/bramp/js-sequence-diagrams/blob/master/README.md 时序图
 // https://github.com/mathjax/MathJax#readme 公式
 
+// a标签新页面打开
+const links = document.links;
+for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+    const link = links[i];
+    if (link.hostname != window.location.hostname) {
+        link.target = "_blank";
+    }
+}
+
+// 复制按钮
 let timeId: ReturnType<typeof setTimeout>;
 var clipboard = new ClipboardJS(".typography .code-figure .copy-btn");
 clipboard.on("success", function (e) {

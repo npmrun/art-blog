@@ -1,8 +1,6 @@
 import type { Post } from '#/type';
-import { settings } from '@blog/config';
+import { isDev, settings } from '@blog/config';
 import type { MarkdownInstance } from 'astro';
-
-const { MODE } = import.meta.env;
 
 /**
  * 统一处理文章目录前缀
@@ -48,7 +46,7 @@ export async function published(): Promise<Post[]> {
   let allPosts = posts
     .filter((post) => post.frontmatter.title)
     .map((post) => single(post))
-    .filter((post) => MODE === 'development' || !post.draft)
+    .filter((post) => isDev || !post.draft)
   allPosts = allPosts.sort((a, b) => {
       if(b.pubTimestamp && a.pubTimestamp){
           return b.pubTimestamp - a.pubTimestamp

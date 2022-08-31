@@ -16,8 +16,8 @@ $linght-color: rgba(234, 88, 12, 0.2);
     color: #2c2e3b;
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Hack Regular", "CustomFonts", Inter, "Noto Sans SC", "Microsoft YaHei",
-        sans-serif;
+    font-family: "Hack Regular", "CustomFonts", Inter, "Noto Sans SC",
+        "Microsoft YaHei", sans-serif;
     .dark & {
         color: #ddd;
     }
@@ -25,12 +25,21 @@ $linght-color: rgba(234, 88, 12, 0.2);
         color: inherit !important;
     }
 
-    .indent{
-        p{
-            text-indent: 2em;
+    &.indent {
+        > p {
+            // text-indent: 2em;
+            &::before {
+                content: " ";
+                // text-indent: 2em; // 会导致内部的行内块标签产生缩进，所以不用
+                padding-left: 2em;
+                display: inline-block;
+            }
+        }
+        a {
+            text-indent: 0;
         }
         li {
-            p{
+            p {
                 text-indent: 0;
             }
         }
@@ -267,7 +276,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
 }
 
 iframe {
-    @apply border rounded-lg p-[4px];
+    @apply border rounded-lg;
     width: 100%;
 }
 

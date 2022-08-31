@@ -6,7 +6,7 @@ import { astroImageTools } from "astro-imagetools";
 import robotsTxt from "astro-robots-txt";
 import compress from "astro-compress";
 import path from "path";
-import partytown from "@astrojs/partytown";
+// import partytown from "@astrojs/partytown";
 
 import sitemap from "@astrojs/sitemap";
 import remarkParseVar from "./plugins/remark-parseVar.mjs";
@@ -44,7 +44,7 @@ export default defineConfig({
             config: { path: "./tailwind.config.js" },
             applyBaseStyles: false, // 手动引入，控制CSS打包后的顺序
         }),
-        partytown(),
+        // partytown(),
         compress(),
         robotsTxt(),
         astroImageTools,
