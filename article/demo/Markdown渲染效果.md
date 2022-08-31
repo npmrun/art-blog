@@ -2,7 +2,7 @@
 title: Markdown渲染效果
 desc: 用于测试网站的md渲染效果
 pubDate: 2022/8/31 00:07:30
-img: "https://tva4.sinaimg.cn/large/9bd9b167ly1fwshggoesbj21hc0u0npd.jpg"
+hero: "https://tva4.sinaimg.cn/large/9bd9b167ly1fwshggoesbj21hc0u0npd.jpg"
 author: Dash
 top: true
 categories: 
@@ -16,9 +16,9 @@ desc: 文章描述
 pubDate: 文章发布日期
 updatedDate: 文章修改日期
 author: 作者
-img: 文章头图
-imgPosition: 头图展示位置
-imgHideTitle: 是否隐藏头图中间的文字
+hero: 文章头图
+heroPosition: 头图展示位置
+heroHideTitle: 是否隐藏头图中间的文字
 categories: 
   - 分类1
   - 分类2

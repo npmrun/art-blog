@@ -16,9 +16,9 @@ export type Post = {
   _images: Record<"name" | "url" | "alt", string>[];
   _head: { level: number; title: string; raw: string }[];
   top: boolean;
-  img: string;
-  imgPosition: "center" | "top" | "bottom";
-  imgHideTitle: boolean;
+  hero: string;
+  heroPosition: "center" | "top" | "bottom";
+  heroHideTitle: boolean;
   Content: MarkdownInstance<any>["Content"];
   postPicture: string;
   toc: boolean;

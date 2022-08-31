@@ -3,7 +3,7 @@ title: markdown-it使用手册
 desc: 文章描述
 pubDate: 2022/8/22 21:04:52
 author: Dash
-img: https://tva4.sinaimg.cn/large/9bd9b167gy1fwsgodlmn8j21hc0u0hdt.jpg
+hero: https://tva4.sinaimg.cn/large/9bd9b167gy1fwsgodlmn8j21hc0u0hdt.jpg
 categories: 
     - 技术笔记
 ---

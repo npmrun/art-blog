@@ -14,7 +14,7 @@ const { content } = Astro.props as Props;
 
 const showToc = (content.toc ?? true) && settings.showTOC;
 
-let image = content.img;
+let image = content.hero;
 if (!image && content._images.length && settings.postPicture === "first") {
     image = content._images[0].url;
 }

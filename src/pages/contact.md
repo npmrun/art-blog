@@ -2,7 +2,7 @@
 layout: "@blog/Layouts/BlogPost.astro"
 title: "联系我"
 toc: false
-img: "https://tva4.sinaimg.cn/large/9bd9b167gy1fwsihj5dtjj21hc0u0u0y.jpg"
+hero: "https://tva4.sinaimg.cn/large/9bd9b167gy1fwsihj5dtjj21hc0u0u0y.jpg"
 ---
 ## 邮箱
 1. 1549469775@qq.com

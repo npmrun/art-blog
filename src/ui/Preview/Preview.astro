@@ -8,7 +8,7 @@ import Content from "./Content.astro";
 const post: Post = Astro.props.post;
 const direction: string = Astro.props.direction;
 
-let image = post.img;
+let image = post.hero;
 if (!image && post._images.length && settings.postPicture === "first") {
     image = post._images[0].url;
 }
