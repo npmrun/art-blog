@@ -9,7 +9,7 @@ import path from "path";
 import partytown from "@astrojs/partytown";
 
 import sitemap from "@astrojs/sitemap";
-import { exampleRemarkPlugin } from "./plugins/example-remark-plugin.mjs";
+import { remarkParseVar } from "./plugins/remark-parseVar.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +17,7 @@ export default defineConfig({
         remarkPlugins: [
             "remark-gfm",
             "remark-smartypants",
-            exampleRemarkPlugin,
+            remarkParseVar,
         ],
         rehypePlugins: [
             "rehype-slug",
@@ -48,7 +48,7 @@ export default defineConfig({
         vue(),
         mdx({
             remarkPlugins: {
-                extends: [exampleRemarkPlugin],
+                extends: [remarkParseVar],
             },
         }),
         sitemap(),
