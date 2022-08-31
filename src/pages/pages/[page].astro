@@ -1,7 +1,7 @@
 ---
 import BlogPage from "@blog/Layouts/BlogPage.astro";
 import { published } from "@blog/utils";
-import { pageSize } from "@blog/config";
+import { pageSize, siteInfo } from "@blog/config";
 import Preview from "@blog/ui/Preview/Preview.astro";
 import Pagination from "@blog/components/Pagination.astro";
 
@@ -12,7 +12,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BlogPage hero="/bg.jpg" heroPosition="center">
+<BlogPage  hero={siteInfo.hero} heroPosition={siteInfo.heroPosition}>
 	<main>
 		{
 			page.data.map((p, i) => (

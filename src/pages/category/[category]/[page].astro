@@ -1,7 +1,7 @@
 ---
 import Preview from "@blog/ui/Preview/Preview.astro";
 import Pagination from "@blog/components/Pagination.astro";
-import { pageSize } from "@blog/config";
+import { pageSize, siteInfo } from "@blog/config";
 import BlogPage from "@blog/Layouts/BlogPage.astro";
 import { published } from "@blog/utils";
 
@@ -28,7 +28,7 @@ const capitalize = ([firstLetter, ...restOfWord]) =>
     firstLetter.toUpperCase() + restOfWord.join("");
 ---
 
-<BlogPage title={capitalize(params.category)} hero="/bg.jpg" heroPosition="center">
+<BlogPage title={capitalize(params.category)}  hero={siteInfo.hero} heroPosition={siteInfo.heroPosition}>
     <div class="flex p-4 items-center text-lg bg-orange-300 dark:bg-sky-500/100 rounded-md"> 
         <div class="font-bold mx-[20px]">{capitalize(params.category)}</div>
         <div class="ml-[15px]">{page.total} 个结果</div>

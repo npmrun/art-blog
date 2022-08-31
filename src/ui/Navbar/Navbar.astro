@@ -19,7 +19,7 @@ import MenuItem from "./_ui/MenuItem.astro";
     <div class="px-[25px] h-[45px] flex items-center justify-between">
         <a href="/" class="text-[20px] flex items-center group">
             <img
-                src={siteInfo.icon}
+                src={siteInfo.avatar}
                 alt={siteInfo.siteName}
                 class="h-10 w-10 rounded-full"
             />
@@ -52,7 +52,9 @@ import MenuItem from "./_ui/MenuItem.astro";
         </Menu>
         <Menu>
             <!-- <ThemeChange /> -->
-            <div id="meunButton" class="md:hidden p-[8px] text-[14px]">菜单</div>
+            <div id="meunButton" class="md:hidden p-[8px] text-[14px]">
+                菜单
+            </div>
         </Menu>
     </div>
 </div>
@@ -69,7 +71,7 @@ import MenuItem from "./_ui/MenuItem.astro";
     <div class="px-[8px] py-[12px] flex flex-col h-full">
         <div class="flex items-center border-b pb-[8px]">
             <img
-                src={siteInfo.icon}
+                src={siteInfo.avatar}
                 alt={siteInfo.siteName}
                 class="h-10 w-10 rounded-full"
             />
@@ -83,15 +85,15 @@ import MenuItem from "./_ui/MenuItem.astro";
                     <li>
                         <a
                             href={item.slug}
-                            class="block px-[15px] h-[45px] leading-[45px] active:bg-black/4."
+                            class="flex items-center px-[15px] text-[14px] leading-[1] h-[45px] active:bg-black/4."
                         >
+                            <span>{item.title}</span>
                             {item.icon && (
                                 <Icon
-                                    class="h-5 w-5 mr-[4px]"
+                                    class="h-5 w-5 ml-[4px] text-[0]"
                                     name={item.icon}
                                 />
                             )}
-                            {item.title}
                         </a>
                     </li>
                 ))
@@ -114,7 +116,7 @@ import MenuItem from "./_ui/MenuItem.astro";
             mobileMenu.classList.add("show");
             mobileMask.style.opacity = 1;
             mobileMask.style.pointerEvents = "auto";
-            document.body.style.overflow = "hidden"
+            document.body.style.overflow = "hidden";
         }
     });
     mobileMask.addEventListener("click", () => {
@@ -123,7 +125,7 @@ import MenuItem from "./_ui/MenuItem.astro";
             mobileMenu.classList.remove("show");
             mobileMask.style.opacity = 0;
             mobileMask.style.pointerEvents = "none";
-            document.body.style.overflow = "auto"
+            document.body.style.overflow = "auto";
         }
     });
 </script>

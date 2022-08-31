@@ -2,7 +2,7 @@
 import { published } from "@blog/utils";
 import Preview from "@blog/ui/Preview/Preview.astro";
 import Pagination from "@blog/components/Pagination.astro";
-import { pageSize } from "@blog/config";
+import { pageSize, siteInfo } from "@blog/config";
 import BlogPage from "@blog/Layouts/BlogPage.astro";
 
 const allPosts = await published();
@@ -10,7 +10,7 @@ const allPosts = await published();
 const totalPage = Math.max(1, Math.ceil(allPosts.length / pageSize));
 ---
 
-<BlogPage hero="/bg.jpg" heroPosition="center">
+<BlogPage hero={siteInfo.hero} heroPosition={siteInfo.heroPosition}>
     <!-- https://github.com/iozcelik/SarissaBlogAstroStarter/blob/master/src/pages/posts/%5Bpage%5D.astro -->
     <main>
         {
