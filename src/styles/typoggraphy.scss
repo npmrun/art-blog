@@ -232,7 +232,6 @@ $linght-color: rgba(234, 88, 12, 0.2);
 
     .sequence {
         overflow: auto;
-        @apply border rounded-lg p-[4px];
         width: 100%;
     }
     .sequence svg {
@@ -240,7 +239,6 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     .flow {
         overflow: auto;
-        @apply border rounded-lg p-[4px];
         width: 100%;
     }
     .flow svg {

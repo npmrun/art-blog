@@ -85,7 +85,7 @@ export default function remarkCode() {
                         <div class="custom-carbon-dot custom-carbon-dot--red"></div>
                         <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
                         <div class="custom-carbon-dot custom-carbon-dot--green"></div>
-                        <span class="language">${lang}</span>
+                        ${!!lang ? `<span class="language">${lang}</span>` : ""}
                     </div>
                     </figcaption>
                     <pre class="${classes.join(
