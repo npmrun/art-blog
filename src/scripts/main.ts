@@ -1,8 +1,34 @@
 import View from "viewerjs";
 import FlowChart from "flowchart.js";
+import ClipboardJS from "clipboard";
 // http://flowchart.js.org/ 流程图
 // https://github.com/bramp/js-sequence-diagrams/blob/master/README.md 时序图
 // https://github.com/mathjax/MathJax#readme 公式
+
+let timeId: ReturnType<typeof setTimeout>;
+var clipboard = new ClipboardJS(".typography .code-figure .copy-btn");
+clipboard.on("success", function (e) {
+    const el = e.trigger as HTMLDivElement;
+    e.clearSelection();
+    el.style.color = "green";
+    el.innerHTML = "复制成功";
+    clearTimeout(timeId);
+    timeId = setTimeout(() => {
+        el.style.color = "";
+        el.innerHTML = "复制";
+    }, 2500);
+});
+
+clipboard.on("error", function (e) {
+    const el = e.trigger as HTMLDivElement;
+    el.style.color = "red";
+    el.innerHTML = "复制失败";
+    clearTimeout(timeId);
+    timeId = setTimeout(() => {
+        el.style.color = "";
+        el.innerHTML = "复制";
+    }, 2500);
+});
 
 // 图片查看器
 const gallery = new View(document.querySelector(".typography"));
@@ -10,8 +36,6 @@ const gallery = new View(document.querySelector(".typography"));
 const flows = document.querySelectorAll(".typography .flow");
 flows.forEach((v: HTMLElement) => {
     const text = v.innerText.replace(/_::_/g, "\n");
-    console.log(text);
-
     var diagram = FlowChart.parse(text);
     v.innerHTML = "";
     diagram.drawSVG(v);

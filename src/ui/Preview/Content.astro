@@ -39,4 +39,16 @@ const post: Post = Astro.props.post;
     <p class="text-sm text-base-content/70 text-white over3line">
         {post.desc}
     </p>
+    {
+        post.top && (
+            <div
+                class={
+                    "absolute text-white bg-orange-400 w-[80%] text-center " +
+                    "left-[54.5%] top-[4%] rotate-[45deg] md:hidden"
+                }
+            >
+                置顶
+            </div>
+        )
+    }
 </div>

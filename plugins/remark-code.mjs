@@ -43,7 +43,7 @@ export default function remarkCode() {
                     tagName: "div",
                     properties: {
                         className: "sequence",
-                        style: "color: #80808057;font-size: 14px;margin: 6px 0;border-width: 0;",
+                        style: "color: #80808057;font-size: 14px;margin: 6px 0;border-width: 0;text-align:center;",
                     },
                     children: [
                         {
@@ -85,7 +85,8 @@ export default function remarkCode() {
                         <div class="custom-carbon-dot custom-carbon-dot--red"></div>
                         <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
                         <div class="custom-carbon-dot custom-carbon-dot--green"></div>
-                        ${!!lang ? `<span class="language">${lang}</span>` : ""}
+                        <div class="text">${!!lang ? `<span class="language">${lang}</span>` : ""}</div>
+                        <div class="copy-btn" data-clipboard-text="${value}">复制</div>
                     </div>
                     </figcaption>
                     <pre class="${classes.join(

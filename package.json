@@ -37,6 +37,7 @@
     "astro-compress": "^1.0.5",
     "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.6.10",
+    "clipboard": "^2.0.11",
     "flowchart.js": "^1.17.1",
     "prism-theme-vars": "^0.2.4",
     "viewerjs": "^1.10.5",

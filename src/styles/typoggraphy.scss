@@ -1,10 +1,14 @@
 @charset "UTF-8";
-/**文章样式**/
+
 @font-face {
     font-family: "Cascadia Mono";
     src: url("/CascadiaMono-Regular.woff2") format("woff2");
 }
-// $color: #4f46e4;
+@font-face {
+    font-family: "Hack Regular";
+    src: url("/Hack-Regular.ttf");
+}
+
 $color: rgb(234, 88, 12);
 $linght-color: rgba(234, 88, 12, 0.2);
 
@@ -12,14 +16,29 @@ $linght-color: rgba(234, 88, 12, 0.2);
     color: #2c2e3b;
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Cascadia Mono", "CustomFonts", Inter, "Noto Sans SC",
-        "Microsoft YaHei", sans-serif;
+    font-family: "Hack Regular", "CustomFonts", Inter, "Noto Sans SC", "Microsoft YaHei",
+        sans-serif;
     .dark & {
         color: #ddd;
     }
     .dark & blockquote p {
         color: inherit !important;
     }
+
+    .indent{
+        p{
+            text-indent: 2em;
+        }
+        li {
+            p{
+                text-indent: 0;
+            }
+        }
+        blockquote p {
+            text-indent: 0;
+        }
+    }
+
     h1,
     h2,
     h3,
@@ -96,7 +115,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     ol,
     ul {
-        margin: 20px 0 20px 25px;
+        margin: 6px 0 6px 15px;
     }
     ul ul li {
         list-style-type: circle;
@@ -118,11 +137,11 @@ $linght-color: rgba(234, 88, 12, 0.2);
         margin: 0 auto;
         cursor: pointer;
     }
-    p:not(.friend-content) {
+    p {
         position: relative;
         margin: 0 0 0.5em 0;
         color: inherit;
-        line-height: 2.2;
+        line-height: 1.8;
     }
     del {
         background-color: #fbb;
@@ -141,6 +160,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     blockquote p {
         color: inherit;
+        line-height: 2.4;
     }
     blockquote:not(.cuteen-blockquote) {
         display: block;
@@ -254,7 +274,7 @@ iframe {
 // 代码块apple样式
 .code-figure {
     margin: var(--prism-block-margin-y) var(--prism-block-margin-x);
-    border: 1px solid rgb(229, 231, 235);
+    border: 1px solid #e2e2e2;
     border-radius: 0.5em;
     overflow: hidden;
 }
@@ -302,6 +322,23 @@ figcaption.line-numbers-head .custom-carbon {
     height: 2.5em;
     display: flex;
     align-items: center;
+    .text {
+        flex: 1;
+        width: 0;
+    }
+    .copy-btn {
+        padding: 0 8px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 0.8em;
+        color: #ddd;
+        transition: color 0.2s linear;
+        &:hover {
+            color: unset;
+        }
+    }
 }
 
 pre.line-numbers {
@@ -313,7 +350,8 @@ pre.line-numbers {
 }
 
 figcaption.code-caption {
-    border-top: 1px solid #f5f6f7;
+    border-top: 1px solid #e2e2e2;
+    font-size: 0.8em;
     color: var(--prism-foreground) !important;
     padding: var(--prism-block-padding-y) var(--prism-block-padding-x);
     background-color: var(--prism-background);
