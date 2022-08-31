@@ -77,37 +77,65 @@ The blockquote element represents content that is quoted from another source, op
 
 ## Code Blocks
 
-```html
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
+```ts aaa
+import fs = require('fs')
+
+class MyClass {
+  public static myValue: string
+  constructor(init: string) {
+    this.myValue = init
+  }
+}
+namespace MyModule {
+  export interface MyInterface extends Other {
+    myProperty: any
+  }
+}
+
+declare const magicNumber: number
+myArray.forEach(() => { }) // fat arrow syntax
 ```
 
 ### LaTeX 公式
 
-可以创建行内公式，例如 $Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ 。或者块级公式：
-
+可以创建行内公式，例如 `$Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$` 。或者块级公式：
+```mathjax
 $$
 x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} 
 $$
-
+```
 ### 流程图
 ```flow
-st=>start: Start
-e=>end
-op=>operation: My Operation
-cond=>condition: Yes or No?
+st=>start: Improve your
+l10n process!
+e=>end: Continue to have fun!:>https://youtu.be/YQryHo1iHb8[blank]
+op1=>operation: Go to locize.com:>https://locize.com[blank]
+sub1=>subroutine: Read the awesomeness
+cond(align-next=no)=>condition: Interested to
+getting started?
+io=>inputoutput: Register:>https://www.locize.app/register[blank]
+sub2=>subroutine: Read about improving
+your localization workflow
+or another source:>https://medium.com/@adrai/8-signs-you-should-improve-your-localization-process-3dc075d53998[blank]
+op2=>operation: Login:>https://www.locize.app/login[blank]
+cond2=>condition: valid password?
+cond3=>condition: reset password?
+op3=>operation: send email
+sub3=>subroutine: Create a demo project
+sub4=>subroutine: Start your real project
+io2=>inputoutput: Subscribe
 
-st->op->cond
-cond(yes)->e
-cond(no)->op
+st->op1->sub1->cond
+cond(yes)->io->op2->cond2
+cond2(no)->cond3
+cond3(no,bottom)->op2
+cond3(yes)->op3
+op3(right)->op2
+cond2(yes)->sub3
+sub3->sub4->io2->e
+cond(no)->sub2(right)->op1
+
+st@>op1({"stroke":"Red"})@>sub1({"stroke":"Red"})@>cond({"stroke":"Red"})@>io({"stroke":"Red"})@>op2({"stroke":"Red"})@>cond2({"stroke":"Red"})@>sub3({"stroke":"Red"})@>sub4({"stroke":"Red"})@>io2({"stroke":"Red"})@>e({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})
 ```
 
 以及时序图:

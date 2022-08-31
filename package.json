@@ -38,6 +38,7 @@
     "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.6.10",
     "flowchart.js": "^1.17.1",
+    "prism-theme-vars": "^0.2.4",
     "viewerjs": "^1.10.5",
     "vue": "^3.2.37"
   }

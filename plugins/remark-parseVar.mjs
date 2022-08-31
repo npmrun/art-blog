@@ -35,7 +35,7 @@ const slugs = new Slugger()
 //   return []
 // }
 
-export function exampleRemarkPlugin() {
+export default function remarkParseVar() {
   return function (tree, file) {
     slugs.reset()
 
