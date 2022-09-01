@@ -10,10 +10,11 @@ import grayMatter from "gray-matter";
     const getSlugFromPathname = (pathname) =>
         path.basename(pathname, path.extname(pathname));
 
-    const contentFilePaths = await globby(["**/*.md"], {
+    const contentFilePaths = await globby(["**/*.md", "!drafts/**/*.md"], {
         cwd: contentDir,
     });
-
+    console.log(contentFilePaths);
+    
     if (contentFilePaths.length) {
         const files = contentFilePaths.map(
             async (filePath) =>
