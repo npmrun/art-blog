@@ -13,8 +13,7 @@ import grayMatter from "gray-matter";
     const contentFilePaths = await globby(["**/*.md", "!drafts/**/*.md"], {
         cwd: contentDir,
     });
-    console.log(contentFilePaths);
-    
+
     if (contentFilePaths.length) {
         const files = contentFilePaths.map(
             async (filePath) =>
