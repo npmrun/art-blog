@@ -15,15 +15,17 @@ for (let i = 0, linksLength = links.length; i < linksLength; i++) {
 }
 
 // 复制按钮
-let timeId: ReturnType<typeof setTimeout>;
-var clipboard = new ClipboardJS(".typography .code-figure .copy-btn");
+var clipboard = new ClipboardJS(".typography .code-figure .copy-btn", {
+    text: function (trigger) {
+        return trigger.nextElementSibling.innerHTML;
+    },
+});
 clipboard.on("success", function (e) {
     const el = e.trigger as HTMLDivElement;
     e.clearSelection();
     el.style.color = "green";
     el.innerHTML = "复制成功";
-    clearTimeout(timeId);
-    timeId = setTimeout(() => {
+    setTimeout(() => {
         el.style.color = "";
         el.innerHTML = "复制";
     }, 2500);
@@ -33,8 +35,7 @@ clipboard.on("error", function (e) {
     const el = e.trigger as HTMLDivElement;
     el.style.color = "red";
     el.innerHTML = "复制失败";
-    clearTimeout(timeId);
-    timeId = setTimeout(() => {
+    setTimeout(() => {
         el.style.color = "";
         el.innerHTML = "复制";
     }, 2500);
