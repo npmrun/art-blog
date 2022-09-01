@@ -46,6 +46,12 @@ export const nav = [
         children: [],
     },
     {
+        title: "留言板",
+        slug: "/board",
+        icon: false,
+        children: [],
+    },
+    {
         title: "Demo",
         slug: "/demo",
         // icon: false,
