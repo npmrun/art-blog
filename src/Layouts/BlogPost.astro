@@ -27,6 +27,8 @@ if (!image) {
     }
 }
 // "https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif"
+
+const canComment = content.comment == undefined ? true : content.comment
 ---
 
 <SitePage title={content.title} desc={content.desc}>
@@ -100,7 +102,7 @@ if (!image) {
             <!-- https://giscus.app/zh-CN -->
             <!-- 构建才打开评论 -->
             {
-                isProd && (
+                isProd && canComment && (
                     <script is:inline src="https://giscus.app/client.js"
                         data-repo="npmrun/art-blog"
                         data-repo-id="R_kgDOH218pQ"

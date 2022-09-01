@@ -23,4 +23,5 @@ export type Post = {
   postPicture: string;
   toc: boolean;
   mode?: "indent"; // 首行段落缩进
+  comment: boolean; // 是否可以评论
 };
