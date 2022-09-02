@@ -19,6 +19,9 @@ author: 作者
 hero: 文章头图
 heroPosition: 头图展示位置
 heroHideTitle: 是否隐藏头图中间的文字
+toc: 是否开启悬浮标题
+mode: 首行段落是否缩进
+comment: 是否可以评论
 categories: 
   - 分类1
   - 分类2

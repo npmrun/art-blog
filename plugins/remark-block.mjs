@@ -7,14 +7,14 @@ import { visit } from "unist-util-visit";
 export default function () {
     return function (tree) {
         visit(tree, (node) => {
-            // if (
-            //     node.type === "textDirective" ||
-            //     node.type === "leafDirective" ||
-            //     node.type === "containerDirective"
-            // ) {
-            //     console.log(node);
+            if (
+                node.type === "textDirective" ||
+                node.type === "leafDirective" ||
+                node.type === "containerDirective"
+            ) {
+                console.log(node);
                 
-            // }
+            }
             if (
                 node.type === "containerDirective" && node.name === "main"
             ) {

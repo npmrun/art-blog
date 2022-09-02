@@ -19,7 +19,7 @@ export default function remarkCode() {
             }
         });
         visit(tree, "code", (node) => {
-            let { lang, value, meta, frontmatter } = node;
+            let { lang, value, meta } = node;
             if (lang === "flow") {
                 const el = {
                     type: "element",

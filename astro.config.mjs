@@ -12,7 +12,6 @@ import sitemap from "@astrojs/sitemap";
 import remarkParseVar from "./plugins/remark-parseVar.mjs";
 import remarkCode from "./plugins/remark-code.mjs";
 import remarkBlock from "./plugins/remark-block.mjs";
-import codeFrontmatter from "remark-code-frontmatter";
 import Directive from "remark-directive";
 
 // https://astro.build/config
@@ -25,7 +24,6 @@ export default defineConfig({
             "remark-smartypants",
             remarkParseVar,
             remarkBlock,
-            codeFrontmatter,
             remarkCode,
         ],
         rehypePlugins: [
@@ -61,7 +59,6 @@ export default defineConfig({
                     Directive,
                     remarkParseVar,
                     remarkBlock,
-                    codeFrontmatter,
                     remarkCode,
                 ],
             },
