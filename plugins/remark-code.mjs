@@ -19,7 +19,7 @@ export default function remarkCode() {
             }
         });
         visit(tree, "code", (node) => {
-            let { lang, value, meta } = node;
+            let { lang, value, meta, frontmatter } = node;
             if (lang === "flow") {
                 const el = {
                     type: "element",
@@ -85,7 +85,11 @@ export default function remarkCode() {
                         <div class="custom-carbon-dot custom-carbon-dot--red"></div>
                         <div class="custom-carbon-dot custom-carbon-dot--yellow"></div>
                         <div class="custom-carbon-dot custom-carbon-dot--green"></div>
-                        <div class="text">${!!lang ? `<span class="language">${lang}</span>` : ""}</div>
+                        <div class="text">${
+                            !!lang
+                                ? `<span class="language">${lang}</span>`
+                                : ""
+                        }</div>
                         <div class="copy-btn">复制</div>
                         <textarea placeholder="." title="." style="display: none;">${value}</textarea>
                     </div>

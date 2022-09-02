@@ -1,0 +1,1 @@
+https://github.com/remarkjs/remark/blob/main/doc/plugins.md

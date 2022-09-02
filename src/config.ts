@@ -75,6 +75,18 @@ export const settings = {
             image: "https://tva4.sinaimg.cn/large/9bd9b167gy1fwsihj5dtjj21hc0u0u0y.jpg",
             order: 2,
         },
+        {
+            name: "主题",
+            desc: "开发的主题",
+            image: "https://tva4.sinaimg.cn/large/9bd9b167gy1g2qmfefug2j21hc0u0npd.jpg",
+            order: 3,
+        },
+        {
+            name: "惬意",
+            desc: "想到什么写什么，这又有什么关系呢",
+            image: "https://tva2.sinaimg.cn/large/9bd9b167gy1fwsigobbuqj21hc0u0npe.jpg",
+            order: 100,
+        },
     ],
     categorySettings: {
         order: "count",
