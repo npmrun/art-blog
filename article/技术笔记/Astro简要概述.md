@@ -4,7 +4,7 @@ desc: 文章描述
 pubDate: 2022/8/31 21:17:49
 author: Dash
 hero: https://tva1.sinaimg.cn/large/9bd9b167gy1g2qjzgtp0tj21hc0u0k13.jpg
-mode: indent # 首行段落缩进
+mode: indent
 categories:
     - Astro
 ---

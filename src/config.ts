@@ -4,11 +4,11 @@ export const isDev = MODE === "development";
 export const isProd = MODE === "production";
 
 // 首页分页个数
-export const pageSize = 3;
+export const pageSize = 10;
 // 站点信息配置
 export const siteInfo = {
     siteName: "Art Blog",
-    siteDesc: "A Beautity Blog To Record Life !",
+    siteDesc: "A Beautiful Blog To Record Life !",
     lang: "zh-cn",
     icon: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
     avatar: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
