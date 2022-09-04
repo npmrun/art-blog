@@ -23,7 +23,7 @@ export default defineConfig({
             "remark-gfm",
             "remark-smartypants",
             remarkParseVar,
-            remarkBlock,
+            [remarkBlock, {}],
             remarkCode,
         ],
         rehypePlugins: [
@@ -58,7 +58,7 @@ export default defineConfig({
                 extends: [
                     Directive,
                     remarkParseVar,
-                    remarkBlock,
+                    [remarkBlock, {}],
                     remarkCode,
                 ],
             },
