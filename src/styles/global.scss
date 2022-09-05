@@ -1,6 +1,11 @@
 @import "./prism.scss";
 @import "./typoggraphy.scss";
 
+html,
+body {
+    scroll-padding-top: 55px; /* set to the height of your header */
+}
+
 .astro-code {
     border-radius: 0.5rem;
     padding: 1rem;

@@ -39,6 +39,7 @@
     "astro-imagetools": "^0.6.10",
     "clipboard": "^2.0.11",
     "flowchart.js": "^1.17.1",
+    "headroom.js": "^0.12.0",
     "prism-theme-vars": "^0.2.4",
     "remark-directive": "^2.0.1",
     "viewerjs": "^1.10.5",
