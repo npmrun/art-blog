@@ -13,7 +13,7 @@ export const siteInfo = {
     icon: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
     avatar: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
     github: "https://github.com/npmrun/art-blog",
-    hero: "https://tva3.sinaimg.cn/large/9bd9b167gy1fwsgda81zhj21hc0u0b29.jpg",
+    hero: "http://tva1.sinaimg.cn/large/005QfeMjgy1h5vi8d7798j31hc0u0u0x.jpg",
     heroPosition: "center",
     startTime: "6/8/2022 10:28:00",
 };

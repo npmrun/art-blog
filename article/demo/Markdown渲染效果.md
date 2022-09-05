@@ -78,6 +78,12 @@ The blockquote element represents content that is quoted from another source, op
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 
+| Italics   | Bold     | Code   |
+| :---------: | :--------: | :------: |
+| _italics_ | **bold** | `code` |
+| Italics   | Bold     | Code   |
+| ---------: | --------: | ------: |
+| _italics_ | **bold** | `code` |
 ## Code Blocks
 
 ```ts 测试文本表述

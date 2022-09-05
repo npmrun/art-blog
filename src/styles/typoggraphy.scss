@@ -167,6 +167,9 @@ $linght-color: rgba(234, 88, 12, 0.2);
         background-repeat: repeat-x;
         background-size: 1px 6px;
     }
+    blockquote{
+        // margin: 6px 0;
+    }
     blockquote p {
         color: inherit;
         line-height: 2.4;
@@ -232,13 +235,14 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     table {
         table-layout: fixed;
-        border-top: 1px solid #f0f0f0;
-        border-left: 1px solid #f0f0f0;
         width: 100%;
         border-radius: 0.25rem 0.25rem 0 0;
         border-collapse: separate;
         border-spacing: 0;
         margin: 1rem 0;
+        border-top: 1px solid #e2e2e2;
+        border-left: 1px solid #e2e2e2;
+        overflow: hidden;
     }
     table thead > tr > th {
         position: relative;
@@ -246,14 +250,20 @@ $linght-color: rgba(234, 88, 12, 0.2);
         font-weight: 500;
         text-align: left;
         background: #fafafa;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid #e2e2e2;
+        &[align="center"]{
+            text-align: center; 
+        }
+        &[align="right"]{
+            text-align: right; 
+        }
     }
     tbody > tr > td {
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid #e2e2e2;
     }
     table thead > tr > th,
     table tbody > tr > td {
-        border-right: 1px solid #f0f0f0;
+        border-right: 1px solid #e2e2e2;
         position: relative;
         padding: 16px;
         overflow-wrap: break-word;
