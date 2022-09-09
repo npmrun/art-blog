@@ -1,4 +1,5 @@
 ---
+import SearchInput from "@blog/ui/SearchInput/SearchInput.astro"
 ---
 
 <div
@@ -12,9 +13,9 @@
 >
     <div
         id="search-content"
-        class="bg-white transition-opacity duration-300 opacity-0 rounded-[6px] p-[8px]"
+        class="bg-white transition-opacity duration-300 opacity-0 rounded-[6px] md:p-[3px] p-[8px] overflow-hidden"
     >
-        sada
+        <SearchInput></SearchInput>
     </div>
 </div>
 <style lang="scss">
@@ -25,6 +26,8 @@
     }
 </style>
 <script lang="ts">
+    const searchBoxEl = document.getElementById("searchBox");
+    
     const searchMask = document.getElementById("search-mask");
     const searchButton = document.getElementById("searchButton");
     const searchContainer = document.getElementById("search-container");
@@ -34,6 +37,7 @@
             searchContainer.classList.add("show");
             searchMask.style.opacity = 1;
             searchMask.style.pointerEvents = "auto";
+            searchBoxEl.focus()
             document.body.style.setProperty("overflow", "hidden", "important");
         }
     });
