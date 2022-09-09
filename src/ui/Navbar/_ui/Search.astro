@@ -1,0 +1,49 @@
+---
+---
+
+<div
+    id="search-mask"
+    class="fixed left-0 right-0 bottom-0 top-0 bg-black/30 z-[99] pointer-events-none opacity-0 transition-opacity duration-300"
+>
+</div>
+<div
+    id="search-container"
+    class="fixed left-1/2 top-1/2 z-[99] md:w-[800px] w-[80%] -translate-x-1/2 -translate-y-1/2"
+>
+    <div
+        id="search-content"
+        class="bg-white transition-opacity duration-300 opacity-0 rounded-[6px] p-[8px]"
+    >
+        sada
+    </div>
+</div>
+<style lang="scss">
+    .show {
+        div {
+            opacity: 1;
+        }
+    }
+</style>
+<script lang="ts">
+    const searchMask = document.getElementById("search-mask");
+    const searchButton = document.getElementById("searchButton");
+    const searchContainer = document.getElementById("search-container");
+    searchButton.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("show");
+        if (!isHave) {
+            searchContainer.classList.add("show");
+            searchMask.style.opacity = 1;
+            searchMask.style.pointerEvents = "auto";
+            document.body.style.setProperty("overflow", "hidden", "important");
+        }
+    });
+    searchMask.addEventListener("click", () => {
+        let isHave = searchContainer.classList.contains("show");
+        if (isHave) {
+            searchContainer.classList.remove("show");
+            searchMask.style.opacity = 0;
+            searchMask.style.pointerEvents = "none";
+            document.body.style.setProperty("overflow", "auto");
+        }
+    });
+</script>
