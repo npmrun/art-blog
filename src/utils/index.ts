@@ -32,7 +32,7 @@ export function single(post: MarkdownInstance<any>): Post {
     Content: post.Content,
     slug: slug,
     url: post.url, // 如果在src/pages目录外，此时url为undefined,那么就使用上面的slug手动拼接路由
-    draft: post.file.split('/').reverse()[1] === 'drafts',
+    draft: post.file.split('/').includes('drafts'),
     pubTimestamp: new Date(post.frontmatter.pubDate).valueOf(),
     updatedTimestamp: !!post.frontmatter.updatedDate && new Date(post.frontmatter.updatedDate).valueOf(),
   };
