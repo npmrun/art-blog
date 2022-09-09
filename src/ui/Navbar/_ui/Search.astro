@@ -9,7 +9,7 @@ import SearchInput from "@blog/ui/SearchInput/SearchInput.astro"
 </div>
 <div
     id="search-container"
-    class="fixed left-1/2 top-1/2 z-[99] md:w-[800px] w-[80%] -translate-x-1/2 -translate-y-1/2"
+    class=" pointer-events-none fixed left-1/2 top-1/2 z-[99] md:w-[800px] w-[80%] -translate-x-1/2 -translate-y-1/2"
 >
     <div
         id="search-content"
@@ -20,6 +20,7 @@ import SearchInput from "@blog/ui/SearchInput/SearchInput.astro"
 </div>
 <style lang="scss">
     .show {
+        pointer-events: auto;
         div {
             opacity: 1;
         }

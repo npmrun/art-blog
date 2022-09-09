@@ -16,6 +16,10 @@ export default function remarkCode() {
                 node.type = "html";
                 let { html } = runHighlighterWithAstro(lang, value);
                 node.value = `<code class="mathjax tex2jax_process">${html}</code>`;
+            }else{
+                node.type = "html";
+                let { html } = runHighlighterWithAstro(lang, value);
+                node.value = `<code class="inline-code">${html}</code>`;
             }
         });
         visit(tree, "code", (node) => {

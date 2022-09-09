@@ -116,8 +116,14 @@ $linght-color: rgba(234, 88, 12, 0.2);
         color: $color;
         display: inline-block;
         transition: all 0.2s ease-in-out;
-        padding: 0 3px;
+        padding: 0 .2em;
+        border-radius: 0.2em;
         word-break: break-all;
+        code{
+            &:hover{
+                background-color: transparent;
+            }
+        }
     }
     a:not([data-fslightbox]):not(.btn):hover {
         background: $linght-color;
@@ -167,7 +173,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
         background-repeat: repeat-x;
         background-size: 1px 6px;
     }
-    blockquote{
+    blockquote {
         // margin: 6px 0;
     }
     blockquote p {
@@ -192,29 +198,6 @@ $linght-color: rgba(234, 88, 12, 0.2);
         font-size: 4rem;
         font-weight: bold;
         color: $linght-color;
-    }
-    mjx-container[jax="SVG"] {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    mjx-container[jax="SVG"][display="true"] svg {
-        margin: 0 auto;
-    }
-    code {
-        // border-radius: 0.25rem;
-        // background-color: #fff5f5;
-        // color: #ff502c;
-        // font-size: 14px;
-        // padding: 0.1em 0.4em;
-        // margin: 0 4px;
-        font-family: "Cascadia Mono", "Noto Sans SC", sans-serif;
-        // white-space: break-spaces;
-    }
-    pre {
-        margin-bottom: 10px;
-    }
-    .code-toolbar {
-        margin: 1em 0;
     }
     hr {
         height: 1px;
@@ -251,11 +234,11 @@ $linght-color: rgba(234, 88, 12, 0.2);
         text-align: left;
         background: #fafafa;
         border-bottom: 1px solid #e2e2e2;
-        &[align="center"]{
-            text-align: center; 
+        &[align="center"] {
+            text-align: center;
         }
-        &[align="right"]{
-            text-align: right; 
+        &[align="right"] {
+            text-align: right;
         }
     }
     tbody > tr > td {
@@ -268,7 +251,16 @@ $linght-color: rgba(234, 88, 12, 0.2);
         padding: 16px;
         overflow-wrap: break-word;
     }
+}
 
+.typography {
+    mjx-container[jax="SVG"] {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    mjx-container[jax="SVG"][display="true"] svg {
+        margin: 0 auto;
+    }
     .sequence {
         overflow: auto;
         width: 100%;
@@ -282,6 +274,17 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     .flow svg {
         margin: 0 auto;
+    }
+    code {
+        font-family: "Cascadia Mono", "Noto Sans SC", sans-serif;
+    }
+    code.inline-code {
+        padding: 0.2em 0.3em;
+        &:hover {
+            cursor: pointer;
+            border-radius: 0.2em;
+            background-color: #e2e2e2;
+        }
     }
 }
 

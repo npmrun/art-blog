@@ -56,7 +56,7 @@ let sortedCategories =
 ---
 
 <BlogPage hero="https://tva4.sinaimg.cn/large/9bd9b167gy1g2qkojqiy4j21hc0u04q3.jpg" heroPosition="top">
-    <main class="flex flex-wrap justify-center gap-8">
+    <main class="flex flex-wrap justify-center gap-8 md:grid-cols-3 md:grid">
         {sortedCategories.map((category: any) => <Card category={category} />)}
     </main>
 </BlogPage>
