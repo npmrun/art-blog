@@ -85,28 +85,30 @@ $linght-color: rgba(234, 88, 12, 0.2);
         position: relative;
         padding-left: 1.5rem;
     }
-    h3::before {
-        content: "";
-        position: absolute;
-        top: 0.9rem;
-        left: 6px;
-        height: 6px;
-        width: 6px;
-        border-radius: 20px;
-        background-color: $color;
+    h3 {
+        border-left: 4px solid $color;
+        padding-left: 0.75rem;
+        margin-bottom: 0.75rem;
+        margin-top: 1rem;
     }
     h4 {
         font-size: 1.05rem;
+        border-left: 4px solid $color;
+        padding-left: 0.75rem;
+        margin-bottom: 0.75rem;
+        margin-top: 1rem;
     }
-    h4::before {
-        content: "";
-        position: absolute;
-        top: 0.65rem;
-        left: 10px;
-        height: 6px;
-        width: 6px;
-        border-radius: 20px;
-        border: 1px solid $color;
+    h5 {
+        border-left: 4px solid $color;
+        padding-left: 0.75rem;
+        margin-bottom: 0.75rem;
+        margin-top: 1rem;
+    }
+    h6 {
+        border-left: 4px solid $color;
+        padding-left: 0.75rem;
+        margin-bottom: 0.75rem;
+        margin-top: 1rem;
     }
     a:not(.btn):not(.stretched-link) {
         display: inline-block;
