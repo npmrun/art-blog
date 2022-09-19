@@ -1,5 +1,47 @@
 @charset "UTF-8";
+// ---------------------github markdown begin
+// @import "github-markdown-css";
 
+// @media (prefers-color-scheme: light){
+//     .markdown-body {
+//         --color-canvas-default: rgba(255, 255, 255, 0.8) !important;
+//         border-radius: 8px;
+//         --color-accent-fg: rgb(234, 88, 12) !important;
+//     }
+// }
+
+// .markdown-body {
+//     box-sizing: border-box;
+//     min-width: 200px;
+//     max-width: 980px;
+//     margin: 0 auto;
+//     padding: 45px;
+//     font-family: "Hack Regular", "CustomFonts", Inter, "Noto Sans SC",
+//         "Microsoft YaHei", sans-serif;
+//     figure.code-figure{
+//         margin-left: 0 !important;
+//         margin-right: 0 !important;
+//         margin-top: 0;
+//         margin-bottom: 16px !important;
+//     }
+//     pre{
+//         background-color: var(--prism-background) !important;
+//     }
+//     ol {
+//         list-style-type: decimal;
+//     }
+//     ul {
+//         list-style-type: disc;
+//     }
+// }
+
+// @media (max-width: 767px) {
+//     .markdown-body {
+//         padding: 15px;
+//     }
+// }
+
+// ---------------------github markdown end
 @font-face {
     font-family: "Cascadia Mono";
     src: url("/CascadiaMono-Regular.woff2") format("woff2");
@@ -118,11 +160,11 @@ $linght-color: rgba(234, 88, 12, 0.2);
         color: $color;
         display: inline-block;
         transition: all 0.2s ease-in-out;
-        padding: 0 .2em;
+        padding: 0 0.2em;
         border-radius: 0.2em;
         word-break: break-all;
-        code{
-            &:hover{
+        code {
+            &:hover {
                 background-color: transparent;
             }
         }
@@ -315,6 +357,7 @@ figcaption.line-numbers-head {
     zoom: 1;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    border-bottom: 1px solid #e2e2e2;
     .language {
         font-size: 0.6em;
         margin-left: 5px;

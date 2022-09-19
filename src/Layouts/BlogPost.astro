@@ -69,7 +69,7 @@ const canComment = content.comment == undefined ? true : content.comment
 
                     <hr class="my-[30px]" />
                     <div class="relative">
-                        <div class:list={['typography', content.mode]}>
+                        <div class:list={['typography', 'markdown-body', content.mode]}>
                             <slot />
                         </div>
                         <script src="@blog/scripts/main.ts"></script>

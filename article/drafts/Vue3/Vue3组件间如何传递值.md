@@ -5,7 +5,7 @@ pubDate: 2022/9/5 11:49:45
 author: Dash
 hero: https://tva2.sinaimg.cn/large/9bd9b167gy1fwshkimml4j21hc0u0u0x.jpg
 categories:
-    - 惬意
+    - Vue3
 ---
 
 ## 分析
@@ -30,7 +30,7 @@ categories:
     通过中间变量传递，本质上跟`pinia`类似
 3. 使用订阅者发布者模型，可使用`tiny-emitter`，这是官方推荐的。唯一需要注意的是不要太过依赖，注意回收监听的事件。
 4. 采用`provide`+`inject`的方式
-    
+
 ## 父组件---->子组件
 
 这种是最常见的组件传值，只需要如下方式即可:
