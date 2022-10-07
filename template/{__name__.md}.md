@@ -4,6 +4,6 @@ desc:
 pubDate: {__date__}
 author: {__author__}
 categories: 
-    - 惬意
+    - 随记
 ---
 

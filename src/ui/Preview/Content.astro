@@ -13,6 +13,7 @@ const post: Post = Astro.props.post;
             >
                 {post.title}
             </a>
+            { post.draft && <span class="text-[12px] bg-red-500 p-[5px] rounded-lg">草稿</span>}
         </h2>
         {
             post.pubDate && (
