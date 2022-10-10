@@ -35,7 +35,7 @@ const canComment = content.comment == undefined ? true : content.comment
     <Hero bg={image} position={content.heroPosition}>
         {!content.heroHideTitle && content.title}
     </Hero>
-    <div class="p-4 pb-10 max-w-4xl mx-auto">
+    <div class="p-4 pb-10 max-w-[50%] mx-auto">
         <main>
             <article>
                 <!-- prose -->
@@ -77,21 +77,24 @@ const canComment = content.comment == undefined ? true : content.comment
                             showToc &&
                                 !!content._head &&
                                 !!content._head.length && (
-                                    <div class="absolute left-full ml-[50px] top-[50px] h-full lg:block hidden whitespace-nowrap">
-                                        <div class="sticky top-[100px]">
-                                            {content._head.map((v) => (
-                                                <a
-                                                    class="block"
-                                                    style={{
-                                                        marginLeft:
-                                                            (v.level - 2) * 20 +
-                                                            "px",
-                                                    }}
-                                                    href={"#" + v.title}
-                                                >
-                                                    - {v.title}
-                                                </a>
-                                            ))}
+                                    <div class="absolute left-full ml-[50px] top-[50px] h-full lg:block hidden whitespace-nowrap ">
+                                        <div class="bg-white/80 border shadow px-[12px] min-w-[160px] py-[6px] rounded-lg sticky top-[60px] max-h-[60vh] flex flex-col">
+                                            <div class="h-[35px] leading-[35px] border-b mb-[12px] text-[16px] font-bold">目录</div>
+                                            <div class="hover:overflow-auto h-0 flex-1 overflow-hidden text-[14px]">
+                                                {content._head.map((v) => (
+                                                    <a
+                                                        class="head block text-gray-400 hover:text-black"
+                                                        style={{
+                                                            marginLeft:
+                                                                (v.level - 2) * 20 +
+                                                                "px",
+                                                        }}
+                                                        href={"#" + v.title}
+                                                    >
+                                                        - {v.title}
+                                                    </a>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                 )

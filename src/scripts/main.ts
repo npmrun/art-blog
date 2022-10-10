@@ -14,6 +14,29 @@ for (let i = 0, linksLength = links.length; i < linksLength; i++) {
     }
 }
 
+const allTitleSelector =
+    ".typography>h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]";
+const allHeadSelector = "a.head";
+function initColor() {
+    const headElement = document.querySelectorAll(allHeadSelector);
+    [...document.querySelectorAll(allTitleSelector)].forEach((el, i) => {
+        if (headElement[i]) {
+            const top = el.getBoundingClientRect().top;
+            if (top < 58) {
+                // @ts-ignore
+                headElement[i].style.color = "#000";
+            } else {
+                // @ts-ignore
+                headElement[i].style.color = "";
+            }
+        }
+    });
+}
+initColor();
+window.addEventListener("scroll", function () {
+    initColor();
+});
+
 // 复制按钮
 var clipboard = new ClipboardJS(".typography .code-figure .copy-btn", {
     text: function (trigger) {
