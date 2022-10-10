@@ -23,7 +23,7 @@ const haveSlot = Astro.slots.has("default")
         @apply brightness-[.85];
     }
 </style>
-<div class="bg md:h-[550px] pb-[250px]">
+<div class="bg md:h-[550px] pb-[250px] relative h-[250px]">
     <figure
         class={`w-full block absolute h-full bg-cover ${position} bg-no-repeat ${haveSlot?'sh':''}`}
         style={`background-image: url(${bg});`}

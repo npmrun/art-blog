@@ -1,47 +1,5 @@
 @charset "UTF-8";
-// ---------------------github markdown begin
-// @import "github-markdown-css";
 
-// @media (prefers-color-scheme: light){
-//     .markdown-body {
-//         --color-canvas-default: rgba(255, 255, 255, 0.8) !important;
-//         border-radius: 8px;
-//         --color-accent-fg: rgb(234, 88, 12) !important;
-//     }
-// }
-
-// .markdown-body {
-//     box-sizing: border-box;
-//     min-width: 200px;
-//     max-width: 980px;
-//     margin: 0 auto;
-//     padding: 45px;
-//     font-family: "Hack Regular", "CustomFonts", Inter, "Noto Sans SC",
-//         "Microsoft YaHei", sans-serif;
-//     figure.code-figure{
-//         margin-left: 0 !important;
-//         margin-right: 0 !important;
-//         margin-top: 0;
-//         margin-bottom: 16px !important;
-//     }
-//     pre{
-//         background-color: var(--prism-background) !important;
-//     }
-//     ol {
-//         list-style-type: decimal;
-//     }
-//     ul {
-//         list-style-type: disc;
-//     }
-// }
-
-// @media (max-width: 767px) {
-//     .markdown-body {
-//         padding: 15px;
-//     }
-// }
-
-// ---------------------github markdown end
 @font-face {
     font-family: "Cascadia Mono";
     src: url("/CascadiaMono-Regular.woff2") format("woff2");
@@ -101,6 +59,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
         line-height: 1.6;
         font-family: "CustomFonts", "Noto Serif SC", "Microsoft YaHei",
             sans-serif;
+        border-left: 4px solid $color;
     }
     h1,
     h2,
@@ -116,7 +75,6 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
 
     h2 {
-        border-left: 4px solid $color;
         padding-left: 0.75rem;
         margin-bottom: 0.75rem;
         margin-top: 1rem;
@@ -128,26 +86,22 @@ $linght-color: rgba(234, 88, 12, 0.2);
         padding-left: 1.5rem;
     }
     h3 {
-        border-left: 4px solid $color;
         padding-left: 0.75rem;
         margin-bottom: 0.75rem;
         margin-top: 1rem;
     }
     h4 {
         font-size: 1.05rem;
-        border-left: 4px solid $color;
         padding-left: 0.75rem;
         margin-bottom: 0.75rem;
         margin-top: 1rem;
     }
     h5 {
-        border-left: 4px solid $color;
         padding-left: 0.75rem;
         margin-bottom: 0.75rem;
         margin-top: 1rem;
     }
     h6 {
-        border-left: 4px solid $color;
         padding-left: 0.75rem;
         margin-bottom: 0.75rem;
         margin-top: 1rem;
