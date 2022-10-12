@@ -60,6 +60,7 @@ export const nav = [
 ];
 
 export const settings = {
+    articleTheme: 'normal',
     showTOC: true,
     postPicture: "first", // first: 设置文章第一张图为头图
     categories: [
@@ -82,7 +83,7 @@ export const settings = {
             order: 3,
         },
         {
-            name: "惬意",
+            name: "随记",
             desc: "想到什么写什么，这又有什么关系呢",
             image: "https://tva2.sinaimg.cn/large/9bd9b167gy1fwsigobbuqj21hc0u0npe.jpg",
             order: 100,

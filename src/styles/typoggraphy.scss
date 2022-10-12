@@ -10,13 +10,18 @@
     src: url("/Hack-Regular.ttf");
 }
 
-$color: rgb(234, 88, 12);
+$color: #555;
 $linght-color: rgba(234, 88, 12, 0.2);
 
+::selection {
+    background: #555;
+    color: white;
+}
+
 .typography {
-    color: #2c2e3b;
-    font-size: 16px;
-    line-height: 1.5;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
     font-family: "Hack Regular", "CustomFonts", Inter, "Noto Sans SC",
         "Microsoft YaHei", sans-serif;
     .dark & {
@@ -196,7 +201,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
         font-family: Georgia, serif;
         font-size: 4rem;
         font-weight: bold;
-        color: $linght-color;
+        color: #555;
     }
     hr {
         height: 1px;
@@ -288,8 +293,8 @@ $linght-color: rgba(234, 88, 12, 0.2);
 }
 
 .markdown-body {
-    --color-accent-fg: rgb(234, 88, 12);
-    --color-accent-emphasis: rgb(234, 88, 12);
+    --color-accent-fg: #555;
+    --color-accent-emphasis: #555;
     .code-figure {
         margin: 0 0;
         margin-bottom: 16px;

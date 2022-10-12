@@ -29,7 +29,8 @@ if (!image) {
 // "https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif"
 
 const canComment = content.comment == undefined ? true : content.comment
-const articleTheme = content.theme&&content.theme == 'github' ? "markdown-body" : "typography"
+const defaultTheme = settings.articleTheme == 'github' ? "markdown-body" : "typography"
+const articleTheme = content.theme !== undefined ? content.theme == 'github' ? "markdown-body" : "typography": defaultTheme
 ---
 
 <SitePage title={content.title} desc={content.desc}>
@@ -41,26 +42,15 @@ const articleTheme = content.theme&&content.theme == 'github' ? "markdown-body" 
             <article>
                 <!-- prose -->
                 <div class="my-6 mx-auto  relative flex">
-                    <div class="flex-1 w-0 bg-white/80 md:rounded-lg p-5 shadow">
-                        <h1 class="text-[30px] my-[20px] gap-3 md:flex block items-baseline">
-                            <div>{content.title}</div>
-                            {
-                                content.author && (
-                                    <div class="text-sm text-base-content/70 text-gray-400 align-middle">
-                                        {content.pubDate && <Date date={content.pubDate} />} By{" "}
-                                        {content.author}
-                                    </div>
-                                )
-                            }
-                        </h1>
-    
+                    <div class="flex-1 w-0 bg-white md:rounded-lg p-5 shadow">
                         {
                             content.categories && !!content.categories.length && (
-                                <div class="flex gap-3 my-[20px] items-center">
+                                <div class="flex gap-3 my-[12px] items-center">
                                     {content.categories.map((v) => (
                                         <a
                                             href={`/category/${v}/1`}
-                                            class="bg-orange-600 text-white px-[12px] py-[6px] leading-[1] rounded-[15px]"
+                                            style="font-size: 14px;"
+                                            class="bg-orange-500 text-white px-[10px] py-[4px] leading-[1] rounded-[15px]"
                                         >
                                             {v}
                                         </a>
@@ -68,8 +58,19 @@ const articleTheme = content.theme&&content.theme == 'github' ? "markdown-body" 
                                 </div>
                             )
                         }
-    
-                        <hr class="my-[30px]" />
+                        <h1 class="text-[30px] my-[12px] gap-3 md:flex block items-baseline">
+                            <div>{content.title}</div>
+                            {
+                                content.author && (
+                                    <div class="text-sm text-base-content/70 align-middle" style="color: #ccc;white-space: nowrap;">
+                                        {content.pubDate && <Date date={content.pubDate} />} By{" "}
+                                        {content.author}
+                                    </div>
+                                )
+                            }
+                        </h1>
+                        <div class="w-[40%] mx-auto" style="color: #ccc;font-size: 12px;text-align: center;">{content.desc}</div>
+                        <hr class="my-[20px] mb-[55px] w-[20%] mx-auto" />
                         <div class="relative">
                             <div class:list={[articleTheme, 'post-article', content.mode]}>
                                 <slot />
@@ -82,7 +83,7 @@ const articleTheme = content.theme&&content.theme == 'github' ? "markdown-body" 
                             !!content._head &&
                             !!content._head.length && (
                                 <div class="ml-[20px] h-full lg:block hidden whitespace-nowrap sticky top-[60px]">
-                                    <div class="bg-white/80 border shadow px-[12px] min-w-[200px] max-w-[250px] py-[6px] rounded-lg max-h-[60vh] flex flex-col">
+                                    <div class="bg-white border px-[12px] min-w-[200px] max-w-[250px] py-[6px] max-h-[60vh] flex flex-col">
                                         <div class="h-[35px] leading-[35px] border-b mb-[12px] text-[16px] font-bold">目录</div>
                                         <div class="hover:overflow-auto h-0 flex-1 overflow-hidden text-[14px]">
                                             {content._head.map((v) => (

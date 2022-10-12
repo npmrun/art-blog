@@ -25,7 +25,7 @@ function initColor() {
             const top = el.getBoundingClientRect().top;
             if (top < 58) {
                 // @ts-ignore
-                headElement[i].style.color = "#000";
+                headElement[i].style.color = "#555";
             } else {
                 // @ts-ignore
                 headElement[i].style.color = "";
