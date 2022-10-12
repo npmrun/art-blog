@@ -293,8 +293,8 @@ $linght-color: rgba(234, 88, 12, 0.2);
 }
 
 .markdown-body {
-    --color-accent-fg: #555;
-    --color-accent-emphasis: #555;
+    --color-accent-fg: #555 !important;
+    --color-accent-emphasis: #555 !important;
     .code-figure {
         margin: 0 0;
         margin-bottom: 16px;
