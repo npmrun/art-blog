@@ -24,4 +24,5 @@ export type Post = {
   toc: boolean; // 是否开启悬浮标题
   mode?: "indent"; // 首行段落是否缩进
   comment: boolean; // 是否可以评论
+  theme: "github"|"normal"; // 是否可以评论
 };

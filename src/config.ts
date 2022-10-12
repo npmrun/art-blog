@@ -20,6 +20,12 @@ export const siteInfo = {
 
 export const nav = [
     {
+        title: "博客",
+        slug: "/post",
+        icon: false,
+        children: [],
+    },
+    {
         title: "分类",
         slug: "/categories",
         icon: false,

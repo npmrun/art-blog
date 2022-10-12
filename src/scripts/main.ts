@@ -14,8 +14,9 @@ for (let i = 0, linksLength = links.length; i < linksLength; i++) {
     }
 }
 
+// 文章详情页
 const allTitleSelector =
-    ".typography>h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]";
+    ".post-article>h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]";
 const allHeadSelector = "a.head";
 function initColor() {
     const headElement = document.querySelectorAll(allHeadSelector);
@@ -38,9 +39,9 @@ window.addEventListener("scroll", function () {
 });
 
 // 复制按钮
-var clipboard = new ClipboardJS(".typography .code-figure .copy-btn", {
+var clipboard = new ClipboardJS(".post-article .code-figure .copy-btn", {
     text: function (trigger) {
-        return trigger.nextElementSibling.innerHTML;
+        return trigger.nextElementSibling.textContent;
     },
 });
 clipboard.on("success", function (e) {
@@ -65,9 +66,9 @@ clipboard.on("error", function (e) {
 });
 
 // 图片查看器
-const gallery = new View(document.querySelector(".typography"));
+const gallery = new View(document.querySelector(".post-article"));
 // 流程图解析
-const flows = document.querySelectorAll(".typography .flow");
+const flows = document.querySelectorAll(".post-article .flow");
 flows.forEach((v: HTMLElement) => {
     const text = v.innerText.replace(/_::_/g, "\n");
     var diagram = FlowChart.parse(text);

@@ -11,9 +11,9 @@ const keys = Object.keys(demoes);
     hero="https://tva1.sinaimg.cn/large/9bd9b167gy1g2qk6q2juwj21hc0u0k89.jpg"
     heroPosition="center"
 >
-    <main class="relative demoes">
+    <main class="relative demoes flex">
         <ul
-            class="right-full top-0 whitespace-nowrap text-right mr-[15px] md:absolute static mb-[8px] max-h-[300px] overflow-auto md:max-h-none"
+            class=" top-0 whitespace-nowrap text-right mr-[15px] static mb-[8px] max-h-[300px] overflow-auto md:max-h-none"
         >
             {
                 keys &&
@@ -57,7 +57,7 @@ const keys = Object.keys(demoes);
                 }
             </style>
         </ul>
-        <div class="mb-[50px] h-[500px] relative">
+        <div class="mb-[50px] h-[500px] relative flex-1 w-0">
             <iframe
                 id="iframeDemo"
                 class="mb-[50px]"

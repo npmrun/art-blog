@@ -6,6 +6,12 @@ import Menu from "./_ui/Menu.astro";
 import MenuItem from "./_ui/MenuItem.astro";
 import MoblieMenu from "./_ui/MoblieMenu.astro";
 import Search from "./_ui/Search.astro";
+
+export interface Props {
+    block?: boolean;
+}
+
+const { block } = Astro.props as Props;
 ---
 
 <script src="./main.ts"></script>
@@ -24,9 +30,10 @@ import Search from "./_ui/Search.astro";
         transform: translateY(-100%);
     }
 </style>
+{!!block && <div class="h-[45px]"></div>}
 <div
     id="navbar"
-    class="fixed z-[99] w-full bg-white/5 shadow backdrop-blur text-white transition"
+    class:list={["fixed top-0 z-[99] w-full bg-white/5 shadow backdrop-blur text-white transition", block?'bg-white/80 text-black':'']}
 >
     <div class="px-[25px] h-[45px] flex items-center justify-between">
         <a href="/" class="text-[20px] flex items-center group">
@@ -68,7 +75,7 @@ import Search from "./_ui/Search.astro";
                 菜单
             </div>
             <div id="searchButton" class="p-[8px] text-[14px] cursor-pointer">
-                搜索
+                搜索博客
             </div>
         </Menu>
     </div>

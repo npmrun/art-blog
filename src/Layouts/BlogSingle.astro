@@ -1,0 +1,14 @@
+---
+import SitePage from "@blog/Layouts/Base/SitePage.astro";
+
+export interface Props {
+    title: string;
+    desc: string;
+}
+
+const { title, desc } = Astro.props as Props;
+---
+
+<SitePage title={title} desc={desc} block>
+    <slot />
+</SitePage>

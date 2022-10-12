@@ -1,25 +1,15 @@
 ---
-import { published } from "@blog/utils";
-import Preview from "@blog/ui/Preview/Preview.astro";
-import Pagination from "@blog/components/Pagination.astro";
-import { pageSize, siteInfo } from "@blog/config";
-import BlogPage from "@blog/Layouts/BlogPage.astro";
-
-const allPosts = await published();
-
-const totalPage = Math.max(1, Math.ceil(allPosts.length / pageSize));
+import { siteInfo } from "@blog/config";
+import BlogSingle from "@blog/Layouts/BlogSingle.astro";
 ---
 
-<BlogPage hero={siteInfo.hero} heroPosition={siteInfo.heroPosition}>
-    <!-- https://github.com/iozcelik/SarissaBlogAstroStarter/blob/master/src/pages/posts/%5Bpage%5D.astro -->
-    <main>
-        {
-            allPosts
-                .slice(0, pageSize)
-                .map((p, i) => (
-                    <Preview post={p} direction={i % 2 === 0 ? "left" : ""} />
-                ))
-        }
-        <Pagination currentPage="1" totalPage={totalPage} url="pages" />
+<BlogSingle title="aaa" desc="asdad">
+    <main class="max-w-4xl mx-auto">
+        <div class="mt-[20px]">
+            首页尚未建设，计划做成个人信息界面，详情请移步<a
+                class="px-[5px] color-red-900"
+                href="/post">博客界面</a
+            >
+        </div>
     </main>
-</BlogPage>
+</BlogSingle>

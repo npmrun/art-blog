@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "github-markdown-css";
 
 @font-face {
     font-family: "Cascadia Mono";
@@ -249,9 +250,20 @@ $linght-color: rgba(234, 88, 12, 0.2);
         padding: 16px;
         overflow-wrap: break-word;
     }
+    code {
+        font-family: "Cascadia Mono", "Noto Sans SC", sans-serif;
+    }
+    code.inline-code {
+        padding: 0.2em 0.3em;
+        &:hover {
+            cursor: pointer;
+            border-radius: 0.2em;
+            background-color: #e2e2e2;
+        }
+    }
 }
 
-.typography {
+.typography, .markdown-body {
     mjx-container[jax="SVG"] {
         display: inline-block;
         vertical-align: middle;
@@ -273,16 +285,36 @@ $linght-color: rgba(234, 88, 12, 0.2);
     .flow svg {
         margin: 0 auto;
     }
-    code {
-        font-family: "Cascadia Mono", "Noto Sans SC", sans-serif;
+}
+
+.markdown-body {
+    --color-accent-fg: rgb(234, 88, 12);
+    --color-accent-emphasis: rgb(234, 88, 12);
+    .code-figure {
+        margin: 0 0;
+        margin-bottom: 16px;
     }
-    code.inline-code {
-        padding: 0.2em 0.3em;
-        &:hover {
-            cursor: pointer;
-            border-radius: 0.2em;
-            background-color: #e2e2e2;
-        }
+    ol,
+    ul {
+        margin: 6px 0 6px 15px;
+    }
+    ul ul li {
+        list-style-type: circle;
+    }
+    ol li {
+        list-style: decimal;
+    }
+    li {
+        list-style: disc;
+    }
+    img {
+        max-width: 100%;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 0;
+        vertical-align: middle;
+        margin: 0 auto;
+        cursor: pointer;
     }
 }
 
@@ -298,10 +330,11 @@ iframe {
     border-radius: 0.5em;
     overflow: hidden;
 }
-.typography pre[class*="language-"] {
-    margin-top: 0;
+
+.code-figure pre[class*="language-"] {
     border-radius: 0;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 figcaption.line-numbers-head {
@@ -340,7 +373,7 @@ figcaption.line-numbers-head .custom-carbon-dot--green {
 
 figcaption.line-numbers-head .custom-carbon {
     padding: 2px 0 0 9px;
-    height: 2.5em;
+    height: 2em;
     display: flex;
     align-items: center;
     .text {

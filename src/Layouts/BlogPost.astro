@@ -29,77 +29,83 @@ if (!image) {
 // "https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif"
 
 const canComment = content.comment == undefined ? true : content.comment
+const articleTheme = content.theme&&content.theme == 'github' ? "markdown-body" : "typography"
 ---
 
 <SitePage title={content.title} desc={content.desc}>
     <Hero bg={image} position={content.heroPosition}>
         {!content.heroHideTitle && content.title}
     </Hero>
-    <div class="p-4 pb-10 max-w-[50%] mx-auto">
+    <div class="pb-6 lg:max-w-6xl md:max-w-[90%] mx-auto ">
         <main>
             <article>
                 <!-- prose -->
-                <div class="py-6 mx-auto">
-                    <h1 class="text-[30px] my-[20px] gap-3 md:flex block items-baseline">
-                        <div>{content.title}</div>
+                <div class="my-6 mx-auto  relative flex">
+                    <div class="flex-1 w-0 bg-white/80 md:rounded-lg p-5 shadow">
+                        <h1 class="text-[30px] my-[20px] gap-3 md:flex block items-baseline">
+                            <div>{content.title}</div>
+                            {
+                                content.author && (
+                                    <div class="text-sm text-base-content/70 text-gray-400 align-middle">
+                                        {content.pubDate && <Date date={content.pubDate} />} By{" "}
+                                        {content.author}
+                                    </div>
+                                )
+                            }
+                        </h1>
+    
                         {
-                            content.author && (
-                                <div class="text-sm text-base-content/70 text-gray-400 align-middle">
-                                    {content.pubDate && <Date date={content.pubDate} />} By{" "}
-                                    {content.author}
+                            content.categories && !!content.categories.length && (
+                                <div class="flex gap-3 my-[20px] items-center">
+                                    {content.categories.map((v) => (
+                                        <a
+                                            href={`/category/${v}/1`}
+                                            class="bg-orange-600 text-white px-[12px] py-[6px] leading-[1] rounded-[15px]"
+                                        >
+                                            {v}
+                                        </a>
+                                    ))}
                                 </div>
                             )
                         }
-                    </h1>
-
-                    {
-                        content.categories && !!content.categories.length && (
-                            <div class="flex gap-3 my-[20px] items-center">
-                                {content.categories.map((v) => (
-                                    <a
-                                        href={`/category/${v}/1`}
-                                        class="bg-orange-600 text-white px-[12px] py-[6px] leading-[1] rounded-[15px]"
-                                    >
-                                        {v}
-                                    </a>
-                                ))}
+    
+                        <hr class="my-[30px]" />
+                        <div class="relative">
+                            <div class:list={[articleTheme, 'post-article', content.mode]}>
+                                <slot />
                             </div>
-                        )
-                    }
-
-                    <hr class="my-[30px]" />
-                    <div class="relative">
-                        <div class:list={['typography', 'markdown-body', content.mode]}>
-                            <slot />
+                            <script src="@blog/scripts/main.ts"></script>
                         </div>
-                        <script src="@blog/scripts/main.ts"></script>
-                        {
-                            showToc &&
-                                !!content._head &&
-                                !!content._head.length && (
-                                    <div class="absolute left-full ml-[50px] top-[50px] h-full lg:block hidden whitespace-nowrap ">
-                                        <div class="bg-white/80 border shadow px-[12px] min-w-[160px] py-[6px] rounded-lg sticky top-[60px] max-h-[60vh] flex flex-col">
-                                            <div class="h-[35px] leading-[35px] border-b mb-[12px] text-[16px] font-bold">目录</div>
-                                            <div class="hover:overflow-auto h-0 flex-1 overflow-hidden text-[14px]">
-                                                {content._head.map((v) => (
-                                                    <a
-                                                        class="head block text-gray-400 hover:text-black"
-                                                        style={{
-                                                            marginLeft:
-                                                                (v.level - 2) * 20 +
-                                                                "px",
-                                                        }}
-                                                        href={"#" + v.title}
-                                                    >
-                                                        - {v.title}
-                                                    </a>
-                                                ))}
-                                            </div>
+                    </div>
+                    {
+                        showToc &&
+                            !!content._head &&
+                            !!content._head.length && (
+                                <div class="ml-[20px] h-full lg:block hidden whitespace-nowrap sticky top-[60px]">
+                                    <div class="bg-white/80 border shadow px-[12px] min-w-[200px] max-w-[250px] py-[6px] rounded-lg max-h-[60vh] flex flex-col">
+                                        <div class="h-[35px] leading-[35px] border-b mb-[12px] text-[16px] font-bold">目录</div>
+                                        <div class="hover:overflow-auto h-0 flex-1 overflow-hidden text-[14px]">
+                                            {content._head.map((v) => (
+                                                <a
+                                                    class="head block text-gray-400 hover:text-black "
+                                                    style={{
+                                                        marginLeft:
+                                                            (v.level - 2) * 20 +
+                                                            "px",
+                                                        "overflow-x": "hidden",
+                                                        "white-space": "nowrap",
+                                                        "text-overflow": "ellipsis"
+                                                    }}
+                                                    href={"#" + v.title}
+                                                >
+                                                    - {v.title}
+                                                </a>
+                                            ))}
                                         </div>
                                     </div>
-                                )
-                        }
-                    </div>
+                                </div>
+                            )
+                    }
                 </div>
             </article>
             <!-- https://giscus.app/zh-CN -->

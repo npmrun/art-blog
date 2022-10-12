@@ -7,9 +7,10 @@ import Footer from "@blog/ui/Footer/Footer.astro";
 export interface Props {
     title?: string;
     desc?: string;
+    block?: boolean;
 }
 
-const { title, desc } = Astro.props as Props;
+const { title, desc, block } = Astro.props as Props;
 ---
 
 <Base title={title} desc={desc}>
@@ -18,11 +19,10 @@ const { title, desc } = Astro.props as Props;
         class="flex flex-col items-center h-full"
     >
         <div class="w-full flex-1 relative z-[1]">
-            <Navbar>
+            <Navbar block={block}>
                 <ThemeChange />
             </Navbar>
             <slot />
         </div>
-        <Footer />
     </div>
 </Base>
