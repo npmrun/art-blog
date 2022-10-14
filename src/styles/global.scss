@@ -87,3 +87,74 @@ body {
 ::-webkit-scrollbar-corner {
     background-color: black;
 } /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+
+.img-wrapper{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+@mixin over-grid($alpha: 0.2){
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-image: url(/grid.svg);
+        z-index: -1;
+        opacity: $alpha;
+        filter: invert(1);
+    }
+}
+
+@mixin shadow-rainbow() {
+    &::after {
+        background-image: radial-gradient(at 27% 37%, #3a8bfd 0, transparent 50%),
+            radial-gradient(at 97% 21%, #9772fe 0, transparent 50%),
+            radial-gradient(at 52% 99%, #fd3a4e 0, transparent 50%),
+            radial-gradient(at 10% 29%, #5afc7d 0, transparent 50%),
+            radial-gradient(at 97% 96%, #e4c795 0, transparent 50%),
+            radial-gradient(at 33% 50%, #8ca8e8 0, transparent 50%),
+            radial-gradient(at 79% 53%, #eea5ba 0, transparent 50%);
+        position: absolute;
+        content: '';
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        filter: blur(100px) saturate(150%);
+        top: 50%;
+        left: 50%;
+        opacity: 0.2;
+        transform: translateZ(0) translateY(-50%) translateX(-50%);
+    }
+}
+
+.over-grid{
+    position: relative;
+    @include over-grid(.5);
+    &::after{
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        box-shadow:0 0 50px 25px #f1f5f9 inset;
+    }
+    @media screen and (max-width:750px) {
+        &::before{
+            background-image: none;
+        }
+        &::after{
+            box-shadow: none;
+        }
+    }
+}
+.shadow-rainbow{
+    @include shadow-rainbow();
+    @include over-grid();
+}

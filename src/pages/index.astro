@@ -2,14 +2,13 @@
 import { siteInfo } from "@blog/config";
 import BlogSingle from "@blog/Layouts/BlogSingle.astro";
 ---
-
 <BlogSingle title="来一杯卡布奇诺" desc="">
-    <main class="max-w-4xl mx-auto">
-        <div class="mt-[20px]">
-            首页尚未建设，计划做成个人信息界面，详情请移步<a
-                class="px-[5px] color-red-900"
-                href="/post">博客界面</a
-            >
-        </div>
-    </main>
+    <div class="shadow-rainbow h-full overflow-auto pt-[45px]">
+        <main class="max-w-4xl mx-3 md:mx-auto mt-[55px]">
+            <div class="img-wrapper w-[80px] h-[80px] rounded-full overflow-hidden">
+                <img src={siteInfo.avatar} alt="">
+            </div>
+            首页尚未建设，计划做成个人信息界面
+        </main>
+    </div>
 </BlogSingle>

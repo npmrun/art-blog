@@ -8,9 +8,10 @@ export interface Props {
     title?: string;
     desc?: string;
     block?: boolean;
+    black?: boolean;
 }
 
-const { title, desc, block } = Astro.props as Props;
+const { title, desc, block, black } = Astro.props as Props;
 ---
 
 <Base title={title} desc={desc}>
@@ -19,7 +20,7 @@ const { title, desc, block } = Astro.props as Props;
         class="flex flex-col items-center h-full"
     >
         <div class="w-full flex-1 relative z-[1]">
-            <Navbar block={block}>
+            <Navbar block={block} black={black}>
                 <ThemeChange />
             </Navbar>
             <slot />

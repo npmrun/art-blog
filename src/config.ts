@@ -26,6 +26,12 @@ export const nav = [
         children: [],
     },
     {
+        title: "wiki(筹备中)",
+        slug: "#",
+        icon: false,
+        children: [],
+    },
+    {
         title: "分类",
         slug: "/categories",
         icon: false,

@@ -9,9 +9,10 @@ import Search from "./_ui/Search.astro";
 
 export interface Props {
     block?: boolean;
+    black?: boolean;
 }
 
-const { block } = Astro.props as Props;
+const { block, black } = Astro.props as Props;
 ---
 
 <script src="./main.ts"></script>
@@ -33,7 +34,7 @@ const { block } = Astro.props as Props;
 {!!block && <div class="h-[45px]"></div>}
 <div
     id="navbar"
-    class:list={["fixed top-0 z-[99] w-full bg-white/5 shadow backdrop-blur text-white transition", block?'bg-white/80 text-black':'']}
+    class:list={["fixed top-0 z-[99] w-full bg-white/5 shadow backdrop-blur text-white transition", block||black?'bg-white/80 text-black':'']}
 >
     <div class="px-[25px] h-[45px] flex items-center justify-between">
         <a href="/" class="text-[20px] flex items-center group">

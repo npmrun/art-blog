@@ -37,12 +37,13 @@ const articleTheme = content.theme !== undefined ? content.theme == 'github' ? "
     <Hero bg={image} position={content.heroPosition}>
         {!content.heroHideTitle && content.title}
     </Hero>
+    <div class="over-grid md:py-[65px] py-4">
     <div class="pb-6 lg:max-w-6xl md:max-w-[90%] mx-auto ">
         <main>
             <article>
                 <!-- prose -->
-                <div class="my-6 mx-auto  relative flex">
-                    <div class="flex-1 w-0 bg-white md:rounded-lg p-5 shadow">
+                <div class="mx-auto  relative flex">
+                    <div class="flex-1 w-0 bg-white md:rounded-lg p-5">
                         {
                             content.categories && !!content.categories.length && (
                                 <div class="flex gap-3 my-[12px] items-center">
@@ -69,7 +70,7 @@ const articleTheme = content.theme !== undefined ? content.theme == 'github' ? "
                                 )
                             }
                         </h1>
-                        <div class="w-[40%] mx-auto" style="color: #ccc;font-size: 12px;text-align: center;">{content.desc}</div>
+                        <div class="md:w-[40%] w-[90%] mx-auto" style="color: #ccc;font-size: 12px;text-align: center;">{content.desc}</div>
                         <hr class="my-[20px] mb-[55px] w-[20%] mx-auto" />
                         <div class="relative">
                             <div class:list={[articleTheme, 'post-article', content.mode]}>
@@ -134,5 +135,6 @@ const articleTheme = content.theme !== undefined ? content.theme == 'github' ? "
             }
             <!-- data-loading="lazy" -->
         </main>
+    </div>
     </div>
 </SitePage>
