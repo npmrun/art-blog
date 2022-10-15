@@ -5,6 +5,7 @@ import Hero from "@blog/ui/Hero/Hero.astro";
 interface Props {
     title?: string;
     desc?: string;
+    name?: string;
     hero: string;
     heroPosition: string;
 }
@@ -12,13 +13,14 @@ interface Props {
 const {
     title,
     desc,
+    name,
     hero,
     heroPosition,
 } = Astro.props as Props;
 // https://tva2.sinaimg.cn/large/0084aYsLgy1h3juoi114yg318e0hj0wv.gif
 ---
 
-<SitePage title={title} desc={desc}>
+<SitePage title={title} desc={desc} name={name}>
     <Hero bg={hero} position={heroPosition} />
     <div class="p-4 pb-10 max-w-3xl mx-auto">
         <slot />

@@ -179,6 +179,8 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     blockquote {
         // margin: 6px 0;
+        font-size: 14px;
+        color: #555;
     }
     blockquote p {
         color: inherit;
@@ -186,7 +188,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     blockquote:not(.cuteen-blockquote) {
         display: block;
-        margin: 0 0 20px;
+        margin: 0 0 10px;
         position: relative;
         line-height: 1.2;
         padding-left: 2.5rem;
@@ -195,13 +197,14 @@ $linght-color: rgba(234, 88, 12, 0.2);
         content: "“";
         position: absolute;
         left: 0;
-        top: 7px;
+        top: 4px;
+        
         margin-top: -1rem;
         z-index: 0;
         font-family: Georgia, serif;
         font-size: 4rem;
         font-weight: bold;
-        color: #555;
+        color: rgb(138, 138, 138);
     }
     hr {
         height: 1px;
@@ -222,7 +225,8 @@ $linght-color: rgba(234, 88, 12, 0.2);
     }
     table {
         table-layout: fixed;
-        width: 100%;
+        max-width: 100%;
+        width: max-content;
         border-radius: 0.25rem 0.25rem 0 0;
         border-collapse: separate;
         border-spacing: 0;
@@ -230,6 +234,7 @@ $linght-color: rgba(234, 88, 12, 0.2);
         border-top: 1px solid #e2e2e2;
         border-left: 1px solid #e2e2e2;
         overflow: hidden;
+        display: block;
     }
     table thead > tr > th {
         position: relative;

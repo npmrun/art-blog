@@ -7,9 +7,10 @@ import Hero from "@blog/ui/Hero/Hero.astro";
 
 export interface Props {
     content: Post;
+    name?: string;
 }
 
-const { content } = Astro.props as Props;
+const { content, name } = Astro.props as Props;
 
 const showToc = (content.toc ?? true) && settings.showTOC;
 
@@ -33,7 +34,7 @@ const defaultTheme = settings.articleTheme == 'github' ? "markdown-body" : "typo
 const articleTheme = content.theme !== undefined ? content.theme == 'github' ? "markdown-body" : "typography": defaultTheme
 ---
 
-<SitePage title={content.title} desc={content.desc}>
+<SitePage title={content.title} desc={content.desc} name={name}>
     <Hero bg={image} position={content.heroPosition}>
         {!content.heroHideTitle && content.title}
     </Hero>
@@ -44,6 +45,14 @@ const articleTheme = content.theme !== undefined ? content.theme == 'github' ? "
                 <!-- prose -->
                 <div class="mx-auto  relative flex">
                     <div class="flex-1 w-0 bg-white md:rounded-lg p-5">
+                        {
+                            content.author && (
+                                <div class="text-sm text-base-content/70 align-middle" style="color: #ccc;white-space: nowrap;">
+                                    {content.pubDate && <Date date={content.pubDate} />} Created By{" "}
+                                    {content.author}
+                                </div>
+                            )
+                        }
                         {
                             content.categories && !!content.categories.length && (
                                 <div class="flex gap-3 my-[12px] items-center">
@@ -60,18 +69,18 @@ const articleTheme = content.theme !== undefined ? content.theme == 'github' ? "
                             )
                         }
                         <h1 class="text-[30px] my-[12px] gap-3 md:flex block items-baseline">
-                            <div>{content.title}</div>
-                            {
+                            <div class="w-full text-center">{content.title}</div>
+                            <!-- {
                                 content.author && (
                                     <div class="text-sm text-base-content/70 align-middle" style="color: #ccc;white-space: nowrap;">
                                         {content.pubDate && <Date date={content.pubDate} />} By{" "}
                                         {content.author}
                                     </div>
                                 )
-                            }
+                            } -->
                         </h1>
                         <div class="md:w-[40%] w-[90%] mx-auto" style="color: #ccc;font-size: 12px;text-align: center;">{content.desc}</div>
-                        <hr class="my-[20px] mb-[55px] w-[20%] mx-auto" />
+                        <hr class="my-[20px] mb-[35px] w-[20%] mx-auto" />
                         <div class="relative">
                             <div class:list={[articleTheme, 'post-article', content.mode]}>
                                 <slot />
