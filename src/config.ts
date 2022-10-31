@@ -11,7 +11,10 @@ export const siteInfo = {
     siteDesc: "A Beautiful Blog To Record Life !",
     lang: "zh-cn",
     icon: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
+
     avatar: "https://xieyaxin.top/usr/uploads/2022/05/1432272769.jpg",
+    name: "谢亚昕",
+
     github: "https://github.com/npmrun/art-blog",
     hero: "http://tva1.sinaimg.cn/large/005QfeMjgy1h5vi8d7798j31hc0u0u0x.jpg",
     heroPosition: "center",
@@ -38,7 +41,7 @@ export const nav = [
         children: [],
     },
     {
-        title: "关于",
+        title: "关于我",
         slug: "/about",
         // icon: false,
         icon: "emojione-v1:beer-mug",

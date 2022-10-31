@@ -3,6 +3,7 @@ layout: "@blog/Layouts/BlogPost.astro"
 title: "留言板"
 hero: "https://tva4.sinaimg.cn/large/9bd9b167gy1g4li71ugb6j21hc0xc7wh.jpg"
 heroPosition: "top"
+heroHideTitle: true
 ---
 
 感谢莅临本博客，本博客采用`astro`技术搭建，主要输出技术文章，考虑到本地编辑十分的费劲，考虑将支持在线使用或者桌面应用使用，更倾向于在线使用。

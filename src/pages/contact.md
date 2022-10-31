@@ -3,6 +3,7 @@ layout: "@blog/Layouts/BlogPost.astro"
 title: "联系我"
 toc: false
 comment: false
+heroHideTitle: true
 hero: "https://tva4.sinaimg.cn/large/9bd9b167gy1fwsihj5dtjj21hc0u0u0y.jpg"
 ---
 ## 邮箱

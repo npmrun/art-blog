@@ -5,6 +5,7 @@ author: "Dash"
 updatedDate: "August 08 2022"
 pubDate: "Jul 08 2022"
 toc: false
+heroHideTitle: true
 comment: false
 mode: indent
 hero: "http://tva1.sinaimg.cn/large/005QfeMjgy1h5vixo8e5wj31hc0u0kjm.jpg"
