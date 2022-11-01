@@ -2,82 +2,175 @@
 import { siteInfo } from "@blog/config";
 import BlogSingle from "@blog/Layouts/BlogSingle.astro";
 ---
+
 <BlogSingle title="来一杯卡布奇诺" desc="">
     <div class="shadow-rainbow h-full overflow-auto pt-[45px]">
         <main class="max-w-4xl mx-3 md:mx-auto mt-[55px]">
-            <div class="flex items-center">
-                <div class="img-wrapper w-[80px] h-[80px] rounded-full overflow-hidden">
-                    <img src={siteInfo.avatar} alt={siteInfo.name}>
+            <div class="flex items-center bg-white/60 shadow backdrop-blur p-[15px] rounded-lg border-white border-[4px]">
+                <div
+                    class="img-wrapper w-[80px] h-[80px] rounded-full overflow-hidden"
+                >
+                    <img src={siteInfo.avatar} alt={siteInfo.name} />
                 </div>
                 <div class="flex-1 w-0 ml-[12px]">
                     <div class="text-[20px]">{siteInfo.name}</div>
-                    <div class="text-gray-400 mt-[4px] text-[12px]">天下风云出我辈，一入江湖岁月催。皇图霸业笑谈中，不胜人间一场醉。</div>
+                    <div class="text-gray-400 mt-[4px] text-[12px]">
+                        天下风云出我辈，一入江湖岁月催。皇图霸业笑谈中，不胜人间一场醉。
+                    </div>
                 </div>
             </div>
-            <h3 class="mt-[16px] text-[28px] font-bold">技能</h3>
-            <div class="grid grid-cols-3 gap-10 mt-[16px]">
-                <div class="">
-                    <p class="text-red-400 text-[20px] font-bold mb-[6px]">JavaScript</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-red-400 rounded-lg w-[80%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">80%</div>
+            <div class="mt-[16px] bg-white/60 shadow backdrop-blur p-[15px] rounded-lg border-white border-[4px]">
+                <h3 class="text-[20px] font-bold">技能</h3>
+                <div class="grid grid-cols-3 gap-10 mt-[16px]">
+                    <div class="">
+                        <p class="text-red-400 text-[16px] font-bold mb-[6px]">
+                            JavaScript
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-red-400 rounded-lg w-[80%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    80%
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <p class="text-yellow-400 text-[20px] font-bold mb-[6px]">CSS</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-yellow-400 rounded-lg w-[80%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">80%</div>
+                    <div class="">
+                        <p
+                            class="text-yellow-400 text-[16px] font-bold mb-[6px]"
+                        >
+                            CSS
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-yellow-400 rounded-lg w-[80%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    80%
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <p class="text-pink-400 text-[20px] font-bold mb-[6px]">HTML</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-pink-400 rounded-lg w-[80%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">80%</div>
+                    <div class="">
+                        <p class="text-pink-400 text-[16px] font-bold mb-[6px]">
+                            HTML
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-pink-400 rounded-lg w-[80%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    80%
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <p class="text-green-400 text-[20px] font-bold mb-[6px]">node</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-green-400 rounded-lg w-[80%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">80%</div>
+                    <div class="">
+                        <p
+                            class="text-green-400 text-[16px] font-bold mb-[6px]"
+                        >
+                            node
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-green-400 rounded-lg w-[80%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    80%
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <p class="text-pink-400 text-[20px] font-bold mb-[6px]">Astro</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-pink-400 rounded-lg w-[40%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">40%</div>
+                    <div class="">
+                        <p class="text-pink-400 text-[16px] font-bold mb-[6px]">
+                            Astro
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-pink-400 rounded-lg w-[40%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    40%
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div></div>
-                <div class="">
-                    <p class=" text-teal-400 text-[20px] font-bold mb-[6px]">Vue</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-teal-400 rounded-lg w-[90%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">90%</div>
+                    <div></div>
+                    <div class="">
+                        <p class="text-teal-400 text-[16px] font-bold mb-[6px]">
+                            Vue
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-teal-400 rounded-lg w-[90%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    90%
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <p class=" text-blue-400 text-[20px] font-bold mb-[6px]">React</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-blue-400 rounded-lg w-[40%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">40%</div>
+                    <div class="">
+                        <p class="text-blue-400 text-[16px] font-bold mb-[6px]">
+                            React
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-blue-400 rounded-lg w-[40%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    40%
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <p class=" text-orange-400 text-[20px] font-bold mb-[6px]">Svelte</p>
-                    <div class="h-[16px] rounded-lg bg-neutral-400/60 border">
-                        <div class="h-full bg-orange-400 rounded-lg w-[20%] text-white relative">
-                            <div class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]">20%</div>
+                    <div class="">
+                        <p
+                            class="text-orange-400 text-[16px] font-bold mb-[6px]"
+                        >
+                            Svelte
+                        </p>
+                        <div
+                            class="h-[12px] rounded-lg bg-neutral-400/60"
+                        >
+                            <div
+                                class="h-full bg-orange-400 rounded-lg w-[20%] text-white relative"
+                            >
+                                <div
+                                    class="absolute text-[12px] left-full ml-[6px] top-[50%] translate-y-[-50%]"
+                                >
+                                    20%
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
